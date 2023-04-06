@@ -1,0 +1,36 @@
+﻿Build started 10/3/2011 11:09:05 AM.
+     1>Project "C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\riversideSA.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\riversideSA.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /I./ /I../../common/inc /I../../../shared/inc /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\include" /I. /FIcuda_runtime.h /c "C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\riversideSA.cu" 
+       AddCudaCompilePropsDeps:
+       Skipping target "AddCudaCompilePropsDeps" because all output files are up-to-date with respect to the input files.
+       CudaBuild:
+         Compiling CUDA source file riversideSA.cu...
+         cmd.exe /C "C:\Users\SonixDAQ\AppData\Local\Temp\f5dc6d3d754949639a93e6f1ab4d2fc4.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\bin\nvcc.exe" -gencode=arch=compute_13,code=\"sm_13,compute_13\" --use-local-env --cl-version 2010 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64" -I"./" -I"../../common/inc" -I"../../../shared/inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\include"  -G0  --keep-dir "x64\Debug" -maxrregcount=0  --machine 64 --compile  -D_NEXUS_DEBUG -g  -use_fast_math  -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "x64\Debug\riversideSA.cu.obj" "C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\riversideSA.cu"
+         
+         C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\bin\nvcc.exe" -gencode=arch=compute_13,code=\"sm_13,compute_13\" --use-local-env --cl-version 2010 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64" -I"./" -I"../../common/inc" -I"../../../shared/inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\include"  -G0  --keep-dir "x64\Debug" -maxrregcount=0  --machine 64 --compile  -D_NEXUS_DEBUG -g  -use_fast_math  -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "x64\Debug\riversideSA.cu.obj" "C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\riversideSA.cu" 
+         riversideSA.cu
+         tmpxft_00001284_00000000-0_riversideSA.cudafe1.gpu
+         tmpxft_00001284_00000000-5_riversideSA.cudafe2.gpu
+         riversideSA.cu
+         tmpxft_00001284_00000000-0_riversideSA.cudafe1.cpp
+         tmpxft_00001284_00000000-11_riversideSA.ii
+         Deleting file "tmpxft_00001284_00000000-6_riversideSA.cpp3.o".
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.dll" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\lib\x64" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.0\lib\x64" /LIBPATH:../../common/lib/x64 /LIBPATH:../../../shared/lib/x64 cudart.lib cutil64D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\riversideSA.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.lib" /MACHINE:X64 /DLL x64\Debug\riversideSA.cu.obj
+         LINK : C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.dll not found or not built by the last incremental link; performing full link
+            Creating library C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.lib and object C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.exp
+         riversideSA.vcxproj -> C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\x64\Debug\riversideSA.dll;#2" /manifest x64\Debug\riversideSA.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\riversideSA.unsuccessfulbuild".
+         Touching "x64\Debug\riversideSA.lastbuildstate".
+     1>Done Building Project "C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\src\riversideSA\riversideSA.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.12

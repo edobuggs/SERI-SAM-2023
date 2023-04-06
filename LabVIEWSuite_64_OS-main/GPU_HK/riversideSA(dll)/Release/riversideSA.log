@@ -1,0 +1,12 @@
+﻿  
+  E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile      -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o Release\riversideSA.cu.obj "E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)\riversideSA.cu" -clean 
+CUDACOMPILE : nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+  riversideSA.cu
+  Compiling CUDA source file riversideSA.cu...
+  
+  E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2015 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile -cudart static     -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o Release\riversideSA.cu.obj "E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)\riversideSA.cu" 
+CUDACOMPILE : nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+  riversideSA.cu
+E:/LabVIEW 2016 Suite/GPU_HK/riversideSA(dll)/riversideSA.cu(363): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+     Creating library E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)\Release\riversideSA.lib and object E:\LabVIEW 2016 Suite\GPU_HK\riversideSA(dll)\Release\riversideSA.exp
+LINK : fatal error LNK1561: entry point must be defined

@@ -1,0 +1,3 @@
+Need to use CUDA 8.0  and windows SDK 8.1 with Toolset VS2015 (v140) for now.
+
+As of 5/2019. Wasn't able to get CUDA 10 and SDK to rebuild VS2015 project.

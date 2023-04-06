@@ -1,0 +1,11 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+External=0
+BrkptCount=0
+WatchCount=5
+WatchExpr1=str1
+WatchExpr2=str3
+WatchExpr3=stringadd
+WatchExpr4=buffer1
+WatchExpr5=intadd

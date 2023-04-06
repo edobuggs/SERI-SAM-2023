@@ -1,0 +1,761 @@
+\documentclass[10pt]{article}
+\usepackage{srcltx,graphicx}
+
+\textwidth 6 in \textheight 8.75 in
+
+\voffset-.75in \oddsidemargin.25in \evensidemargin.25in
+
+\begin{document}
+
+\begin{center}
+ {\huge \bf Riverside Research Institute}
+\end{center}
+
+{\bf To:} Biomed group
+
+{\bf From:} Jeff Ketterling
+
+{\bf Date:} \today
+
+{\bf Subject:} How to use new scanning system.
+\\
+
+This memo discusses the operation of the new automated scanning
+system. The focus is on how to operate the software, rather than
+technical aspects of the how the overall system works. For a
+description of how the software works, examine the block diagrams
+of the LabVIEW VIs. Most have notes indicating what is being done.
+The computer used to control the apparatus requires the
+account``biomed'' with a password 1234.
+%\\ \hline
+
+\section{Wiring Connections}
+
+The BNC cable wiring schematic for the scanning system at RRI is
+shown in Fig.~\ref{fig:BNCWires}(a). All of the equipment is
+either mounted on a relay rack or in the controlling computer. The
+switch box permits software selection of a PRF from either a motor
+or a function generator. Cables connect cards in the computer to
+the appropriate components in the relay rack. These include
+connections between a Motion Master 2000 or National Instruments
+motion control card and a break out box, a GPIB card and several
+pieces of equipment (Fig.~\ref{fig:BNCWires}(a)), and a
+multipurpose data acquisition card and a break out box. A trigger
+line and RF line also go to an Acqiris DP110 A/D card. Additional
+cables link the three DC motors to a driver box on the relay rack.
+
+A reduced version system without a therapy component is shown in
+Fig.~\ref{fig:BNCWires}(b). This system is currently set up in
+Hawaii. Both systems use the same operating software except that
+the Hawaii system has fewer available options. The national
+instruments software will work with both stepper and DC motor
+systems.
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3.5 in]{BNCWiring.eps}
+ \caption{Wiring diagram for equipment.}
+ \label{fig:BNCWires}
+\end{center}
+\end{figure}
+
+The switch box provides signal connections between the 6024E and
+Motion Master 2000 cards (Fig~\ref{fig:BNC2090}) and is only used
+at RRI. The box three inputs (the function generator PRF) and two
+outputs (a digitizer/panametrics trigger and a therapy
+gate/trigger). The connections shown in Fig~\ref{fig:BNC2090} that
+refer to a pin number and wire color are for the auxiliary
+connector of the Motion Master 2000 interface box, the numbers
+toward the bottom of the figure refer to pins on the 6024E. The
+connection is made via a DIN cable that hangs out of the box. The
+motor trigger BNC is used only for NI based motion control and the
+DIN cable should be disconnected in this case.
+
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2.5 in]{BNC2090.eps}
+ \caption{Wiring diagram for PRF source switching box. A pin
+ number plus wire color refers to the Motion Master 2000 connections
+ card. The connections are made via a 15 pin DIN cable than connects to
+ AUX connector of the MM2000 axis break out box.The numbers at the bottom
+ of the figure refer to pin numbers of the National Instruments 6024E card.
+ A BNC input for the motion trigger is used for NI systems}
+ \label{fig:BNC2090}
+\end{center}
+\end{figure}
+
+Inside the switch box, the PRF signals from the function generator
+and motor first pass through TTL circuits. The circuits are a
+SN7405 hex inverter for the motor PRF pulse, and a SN54122
+monostable multivibrator for the function generator PRF source.
+The SN7405 acts as a protection buffer for the Motion Master 2000
+I/O line. The SN54122 reduces the PRF duty cycle from the HP33130A
+to avoid trigger problems with the Panametrics 5900PR (refer to
+5900PR manual for more info). A two line multiplexer (SN54157) is
+then used to select either the function generator or the motor
+pulse as the PRF source used to trigger the A/D card. The
+selection is done via software on line 2 of the 6024E card.
+
+\section{Using the Scan System}
+
+The operation of the scan system is controlled through the vi
+named {\it mastercontrol.vi} (Fig~\ref{fig:mastercon}). {\it
+Mastercontrol.vi} is a portal to all components of data
+acquisition and motion control. {\bf Before running {\it
+mastercontrol.vi}, turn on all electrical components of the scan
+system (HP function generators, Panametrics, and motor power
+supply), except for the ENI amplifier.} The type of motion system
+in use should be selected and if it is not an available option, it
+has been hardwired into the program. The system is now ready to
+use and the vi is executed by pushing
+\includegraphics{runvi.eps} in the upper left corner of the vi.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2.5 in]{mastercon.eps}
+ \caption{Image of the {\it mastercontrol.vi} control panel.}
+ \label{fig:mastercon}
+\end{center}
+\end{figure}
+
+The options in the green box labeled Motion Control allow for
+movement of the translation stages. The pull down menu above the
+{\it Go} key selects what data acquisition mode is used. After
+choosing a mode, pushing {\it Go} activates the selected mode.
+Pushing {\it Exit} terminates execution of the program.
+
+Occasionally, the Motion Master 2000 Board will not respond upon
+initialization, causing the software to hang up. When this occurs,
+the vis won't respond when options are selected on the front
+panel. If this should happen, force termination of the program by
+pressing the stop button (\includegraphics{stop.eps}). Close all
+open vis except for {\it mastercontrol.vi} and then execute {\it
+mastercontrol.vi} again.
+
+The operation of {\it mastercontrol.vi} will be discussed in terms
+of its subsystems. The subsystems are usually separate vis but
+they are not meant to be used as stand alone programs. As the
+overall program is used, various other vi windows will open as
+options are selected. {\bf It is important to remember that once
+done with these new windows, they should be closed by pushing the
+red {\it Done} button. Do not force the vi window closed or simply
+return to the original vi with a mouseclick.}
+
+The remaining subsections discus the operation of the {\it
+mastercontrol.vi} and its subsystems roughly in the order that the
+options will be encountered.
+
+\subsection{Positioning the Transducer}
+
+The first options after executing {\it mastercontrol.vi} are for
+motion control. They are in the green box labeled Motion Control.
+The first two options ({\it manual motion control} and {\it move
+to X-Y-Z}) open new vis. The third option, {\it Return to Home},
+returns the translation stages to the $(X,Y,Z)$=(0,0,0) position.
+
+Pushing {\it manual motion control} opens the vi named {\it
+MM2KManCTRL.VI} (Fig.~\ref{fig:manCTRL}(a)). This vi allows for
+manual movement of the translation stages. Each axis has a set of
+controls allowing continuous or incremental movement. The current
+position is actively updated as motion takes place.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=4.5 in]{manCTRL.eps}
+ \caption{(a) Control panel for {\it MM2KManCTRL.VI}. Depressing
+ {\it minus} or {\it plus} moves the translation stages until the
+ button is released. The circular buttons move the stages in 1 cm
+ increments. {\it RST} makes the current position the zero position.
+ (b) Control panel for {\it MoveToXYZ.vi}. Entering an absolute
+ position into the position indicator moves the motor to that position.
+ Pushing {\it Rst} resets the position indicator to zero. (c) New software
+ that has both functions combined.}
+ \label{fig:manCTRL}
+\end{center}
+\end{figure}
+
+Continuous motion is accomplished by depressing the buttons marked
+{\it minus} or {\it plus}. The translation stage for that axis
+will move while the button is pressed. Once released, the stage
+will stop. If the blue circular buttons are pushed, the stage will
+move in 1 cm steps. To reset to the zero position, simply push the
+black button {\it Rst}. When through positioning the stages,
+select {\it Done}. {\it MM2KManCTRL.VI} will then close and you
+will return to {\it mastercontrol.vi}.
+
+Pushing {\it move to X-Y-Z} opens another vi named  {\it
+MoveToXYZ.vi} (Fig.~\ref{fig:manCTRL}(b)). This vi allows movement
+based on the input co-ordinates. Entering new co-ordinates moves
+the motor to the new position. Like before, the position can be
+reset to zero at any time and when through with the program,
+pressing {\it Done} returns to {\it mastercontrol.vi}.
+
+Note that the maximum translation for the $X$ and $Y$ stages is 10
+cm and for the $Z$ stage 5 cm. If the motor moves too far, it will
+activate a stop switch and the motor will wait until it is moved
+back to a valid position. {\bf Therefore, it is important to make
+sure enough space is available before taking any B scans.}
+
+\subsection{Scan Modes}
+
+Once the translation stages are positioned, a scan mode can be
+entered. The scan modes are entered by selecting an option from
+the pull down menu above the {\it Go} button
+(Fig.~\ref{fig:scanmenu}). Except for the first scan mode option,
+all the modes take scan line data and use the same vi. Each mode
+will be discussed separately since the options change slightly for
+each mode.
+
+
+\subsubsection{Therapy With No Scan}
+\label{sec:thernoscan}
+
+This mode allows the therapy transducer to be fired for a selected
+number of seconds. No scan lines are taken in this mode. When the
+mode is selected, a new vi opens up {\it Therapy.vi}
+(Fig.~\ref{fig:therapyvi}). This vi permits a selection of the
+therapy frequency, amplitude, and how long the therapy fires. Once
+these values are chosen, selecting {\it Start Therapy} activates
+the therapy transducer. {\bf To stop the therapy burst in the
+middle of operation, you can either press {\it Emergency Stop} or
+the Esc key on the keyboard.} When finished with this mode,
+pushing {\it Done} returns to {\it mastercontrol.vi}.
+
+\begin{figure}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=2in]{scanmenu.eps}
+ \caption{Scan menu in {\it mastercontrol.vi}. After selecting a scan mode,
+ pressing {\it Go} activates that modes control vi.}
+\label{fig:scanmenu}
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=2in]{therapyvi.eps}
+\caption{Control panel for {\it therapy.vi}. After selecting
+parameters in the green box, pushing {\it Start Therapy} fires the
+therapy transducer for the selected amount of time. Pushing {\it
+Emergency Stop} or Esc will stop the therapy signal.}
+  \label{fig:therapyvi}
+\end{minipage}
+\end{figure}
+
+\subsubsection{Therapy With Scan}
+\label{sec:therscan}
+
+The Therapy With Scan mode allows for a pre and post look M-Scan
+when the therapy transducer is fired. When this mode is selected,
+{\it AcqCont.vi} opens with options for this particular mode
+(Fig.~\ref{fig:AcqTher}). {\it AcqCont.vi} will be used by all the
+remaining modes with slightly different input parameters for each
+mode. Therefore, the discussion will be a bit more detailed in
+this section to introduce the common features used in all the
+modes. The general layout is for the the control features to be on
+the left and the display features on the right. The discussion
+will follow a counter clockwise route for how to operate the vi.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=5.8 in]{AcqTher.eps}
+ \caption{Control panel for {\it AcqCont.vi}. The controls on the left side
+ relate to input parameters and the controls on the right side to viewing
+ and saving acquired data. The left side controls will vary depending on what scan
+ mode is selected.}
+ \label{fig:AcqTher}
+\end{center}
+\end{figure}
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=3.8 in]{5900.eps}
+ \caption{Control panel for {\it 5900PRSet.vi}. This vi accesses the same
+ option that are available on the front panel of the 5900PR.}
+ \label{fig:5900}
+\end{center}
+\end{figure}
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=3.5 in]{header.eps}
+ \caption{Control panel for {\it SaveData.vi}. This vi allows the
+ user to select parameters in the EYE file header before EYE files
+ are saved.}
+ \label{fig:header}
+\end{center}
+\end{figure}
+
+The {\it prf (kHz)} selects the prf from the HP33120A function
+generator (GPIB 11). Next to it, the equivalent time for the prf
+in ms is given. Below this control is a green box which controls
+the Therapy Parameters. These parameters are the same as in
+Sec.~\ref{sec:thernoscan} with two additional options: {\it Lines
+Before} and {\it Lines After}. These options represent how many A
+scans to take before and after the therapy burst.
+
+Below the Therapy Parameters box is a button to {\it Set
+Panametrics}. When this is chosen the vi {\it 5900PRSet.vi} opens
+(Fig.~\ref{fig:5900}). The options in this vi are the same as
+those available on the 5900PR. Changes can be made directly on the
+instrument without effecting any of the vi discussed here. {\it
+5900PRSet.vi} is provided because it is somewhat more convenient
+to use than the actual front panel of the instrument. Once the
+settings of the 5900PR are selected, push {\it Done} to return to
+{\it AcqCont.vi}.
+
+The next control, {\it Set Digitizer}, is discussed in more detail
+in Sec.~\ref{sec:digi}. Before taking data for the first time,
+this option needs to be selected. A new vi will open, allowing a
+rf sampling window to be selected. Once the digitizer is set up,
+data can be acquired by pushing {\it Start Scan}.
+
+Once {\it start scan} is selected, data is acquired and displayed
+in the figure on the right side of {\it AcqCont.vi}. Under the
+plot are two controls. One allows the data to be represented as a
+linear compression or a log compression. The other control allows
+the axis to be scaled to a distance, rather than a count.
+
+The controls above the plot select the naming convention of the
+files and allow data to be saved. {\it Case name} selects the root
+name for the files. It can be changed at anytime. As data is
+taken, a scan number is appended to the case name, always starting
+with 1 for a new case name. Previous scans can be viewed by
+selecting the appropriate case name in the pull down menu below
+the {\it Save All Data} button. They can also be viewed as a
+collection of thumbnail images by selecting {\it View Thumbnails}.
+When this option is selected, another vi opens up in the
+background ({\it Thumbnails.vi}). {\it Thumbnails.vi} will display
+thumbnail scan images with an overlaid file name as data is taken.
+
+When the data is ready to be saved, pressing {\it Save All Data}
+initiates the process. If you do not want to save all of the
+cases, press the red {\it keep?} button next to the appropriate
+case so that it is not lit. {\bf You must choose which cases not
+to save before pressing {\it Save All Data}}. The default setting
+for each new file is to save it. A new vi opens up
+(Fig.~\ref{fig:header}) showing all the header information that
+will be saved with the EYE file. Most of the fields can be changed
+at this point except for items that were fixed upon scanning
+(Sample Rate, \# rf points per line, RF file name, Patient ID,
+etc). These items are grayed out to indicate they cannot be
+changed. When ready to save the files press the button labeled
+{\it Push here when finished with header info} at the bottom of
+the vi. All the data is saved to the D:$\backslash$Temp directory.
+
+To delete all of the acquired data, press {\it Erase All Data}. To
+enter a different scan mode or to exit the program, press {\it
+Done} and return to {\it mastercontrol.vi}.
+
+\subsubsection{M Scan}
+
+The M scan mode differs from the above section only in the choice
+of input parameters. Figure \ref{fig:mscan} shows the upper left
+corner input parameters available in {\it AcqCont.vi}. The choices
+now are just for {\it prf} and {\it lines per scan}. Digitizer
+settings may also need to be changed, but that is discussed in a
+later section.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2 in]{mscan.eps}
+ \caption{Input parameters for {\it AcqCont.vi} when in M Scan mode.}
+ \label{fig:mscan}
+\end{center}
+\end{figure}
+
+\subsubsection{M Scan With Therapy}
+
+The options in {\it AcqCont.vi} look the same as in
+Fig~\ref{fig:mscan}. The therapy parameters are chosen in the vi
+activated by selecting {\it Set Digitizer}. A green light will
+indicate that the total number of data points is valid. If the
+indicator turns red, the number of RF points of number of scan
+lines needs to be reduced until the display turns green again. The
+therapy mode for this and in the next sections now differs
+slightly from the ones in Secs.~\ref{sec:thernoscan} and
+\ref{sec:therscan}. The therapy is now slaved to a divide down
+circuit linked to the prf. A divide down factor ($n$) is chosen
+for the prf, and then the therapy is fired every $n$ triggers.
+Unlike before, the therapy is limited to a maximum of 50000
+cycles.
+
+\subsubsection{1-D B Scan}
+
+As in the previous mode, the input parameters change slightly when
+1-D B Scan is selected (Fig.~\ref{fig:1dBscan}). Now you choose
+the spacing between scan lines instead of the prf. The total
+distance of the scan is displayed based on the {\it lines per
+scan} and {\it Distance between scan lines ($\mu$m)}. The prf
+source will now be derived from the motors. All previous modes
+used the function generator as the prf source.
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2 in]{1dBscan.eps}
+ \caption{Input parameters for {\it AcqCont.vi} when in 1-D B Scan mode.}
+ \label{fig:1dBscan}
+\end{center}
+\end{figure}
+
+
+\subsubsection{1-D B Scan With Therapy}
+
+This mode looks just like 1-D B Scan except now a therapy burst
+can be fired with a divide down setting.
+
+\subsubsection{2-D B Scan}
+
+In the 2-D B Scan mode, a few more parameters than in the 1-D B
+Scan mode are available. Now the user must select {\it number of
+scans} and the {\it Distance between scans ($\mu$m)}
+(Fig.~\ref{fig:2dBscan}). These settings determine the number of
+scan planes and the distance between the scan planes.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=4.5 in]{2dBscan.eps}
+ \caption{Input parameters for {\it AcqCont.vi} when in 2-D B Scan mode.
+ A control is now available to select which scan plane to view.}
+ \label{fig:2dBscan}
+\end{center}
+\end{figure}
+
+This case differs slightly from the earlier modes because each
+scan generates multiple data sets. The {\it case name} now
+represents a 2-D scan where each case has multiple scan planes. A
+number is still appended to the Case Name for each new scan, but
+now a letter {\bf a} is added to the end of it. (Case1a is the
+first scan, Case 2a is the second, etc.) To view the individual
+scan planes for each case, the {\it Scan to View} control is
+incremented to the appropriate scan plane number. Note that the
+number starts from 0 not 1. To view a previous case, the menu
+control below {\it Save All Data} is still used. Now when the data
+is saved, the data from each case retains its case name (Case1a)
+and the scan plane number is appended to the end of this name. For
+example, Case2a003 would be the third scan plane of Case2a.
+
+
+\subsubsection{2-D B Scan With Therapy}
+
+This mode looks just like 2-D B Scan except now a therapy burst
+can be fired with a divide down setting.
+
+\subsubsection{Rotational Scan}
+
+This mode uses a fourth axis that rotates a specimen while
+scanning. The probe remains fixed while the specimen rotates. This
+mode also permits 2-D scanning in multiple z-axis planes. This
+mode is only available with the NI based systems. The mode permits
+the scan angle to be selected in 45 $^{\circ}$ increments and the
+number of scan lines are selected with a pull down menu. A red
+light will turn if an invalid combination is used or if the number
+of data points exceeds the hardware capability.
+
+\subsection{Setting up Digitizer}
+\label{sec:digi}
+
+When the {\it Set Up Digitizer} control is selected in {\it
+AcqCont.vi}, the vi {\it SetUpDigi.vi} opens
+(Fig.~\ref{fig:SetDigi}). {\it SetUpDigi.vi} allows the user to
+select a RF window for digitization. The vi functions much like an
+oscilloscope but with a few additional control parameters. The vi
+is divided into three zones, Digitizer Settings, Therapy Burst Set
+Up, and an active display of the RF signal.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=5.5 in]{SetDigi.eps}
+ \caption{Control panel for {\it SaveUpDigi.vi}. This vi selects what
+ region of the RF signal to capture. The data between the yellow and red
+ cursors is the data that will be digitized. {\it Sampling Rate} and {\it rf
+ points per line} select the ``length'' of data. {\it Ref Delay ($/mu$s)} and
+ the position of the left cursor select the first data point. Therapy settings
+ are only available if a Therapy scan mode was selected.}
+ \label{fig:SetDigi}
+\end{center}
+\end{figure}
+
+The Digitizer Settings are all enclosed within a green border
+which contains several sub-units, also enclosed in green boxes.
+The RF data Sampling parameters select what region of the active
+display will be digitized in {\it AcqCont.vi}. {\it Sampling Rate}
+and {\it rf points per line} select the data region to digitize
+which is represented by the data between the Yellow and Red
+cursors in the active display. {\it Ref Delay ($\mu$s)} selects a
+delay relative to the PRF trigger and selects the first point in
+the active display. The {\it Ref Delay ($\mu$s)} combined with the
+location of the Yellow cursor result in a value for {\it
+Equivalent delay distance (mm)} and {\it Total Delay ($\mu$s)}.
+
+The remaining Digitizer Settings function much like the controls
+on an oscilloscope. Scale Settings select the vertical and
+horizontal parameters of the Acqiris DP110. {\it Voltage Scale}
+represents the full digitization range of the DP110 with 5
+V$_{pp}$ being the maximum allowable parameter and 50~mV$_{pp}$
+the minimum. {\it Coupling} represent the channel coupling and
+needs to be either DC 50 $\Omega$ or AC 50 $\Omega$. {\it Time
+Scale per Div} represents time per division in the active display
+with a total of ten divisions. Therefore the total duration of the
+displayed RF signal is 10 times the value of {\it Time Scale per
+Div}. The final Digitizer Settings are for the trigger source and
+will normally not need to be adjusted. The default values are for
+an external, 1 M$\Omega$ DC coupled source that triggers the DP110
+on its rising edge with a 100 mV level.
+
+The text box labeled {\it Error Message} will normally say
+something like {\bf Triggered Successfully}. This indicates that
+the DP110 is functioning properly. If some other message appears,
+then a problem may be present in the system. If a message saying
+{\bf Triggers Missing} appears, then the trigger source on the
+switch box is likely set to Motor PRF or a BNC cable is not
+connected properly.
+
+The active display will show the RF signal and the data region
+selected for digitization. The Red cursor is slaved to the Yellow
+cursor based on the values of {\it Sampling Rate} and {\it rf
+points per line}. The Yellow cursor can be moved by selecting it
+with the mouse and dragging it to a new position. The scales for
+the active display are in mV and units of the selected {\it Time
+Scale per Div}. The spectrum of the full RF signal can be viewed
+by selecting {\it View Freq Domain} rather than {\it View Time
+Domain}. When a spectrum view is chosen, the axis need to be
+re-scaled by pushing \includegraphics{autox.eps} and
+\includegraphics{autoy.eps} in the control below the active
+display.
+
+The Therapy Bust Set Up controls are only displayed if a therapy
+scan mode is being used. The therapy is limited here to a maximum
+of 50000 cycles. The therapy is fired every $n$ counts of the PRF
+as selected in the {\it Divide prf} control. The therapy delay
+represents a delay in the therapy burst relative to the PRF
+trigger. {\it Therapy frequency (MHz)} and {\it Therapy amplitude
+(mV)} are just what they appear to be. The therapy bursts can be
+momentarily stopped by pushing {\it Pause Therapy}. The control
+will then read {\it Therapy Off} and when it is pushed again, the
+therapy bursts will return.
+
+Once a region of the RF signal has been selected for digitization,
+pushing {\it Done} returns to {\it AcqCont.vi} and scan data can
+be acquired.
+
+\section{Transducer Characterization}
+
+The vi {\it TestTrans.vi} (Fig.~\ref{fig:TestTrans}) operates in a
+similar fashion to {\it manualcontrol.vi}, but is designed to
+characterize a transducer beam. The main difference between the
+two programs is that {\it TestTrans.vi} extracts a parameter from
+each scan line (such as negative peak voltage) and then displays
+it. The controls in Fig.~\ref{fig:TestTrans} will be discussed
+from left to right, focusing mainly on features not yet discussed.
+{\bf The connections change slightly because the DP110 Channel 1
+input is now meant to be from a hydrophone.}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=5 in]{TestTrans.eps}
+ \caption{Control panel for {\it TestTrans.vi}. This vi allows for the
+ characterization of a transducer beam. Both 1-D and 2-D scans are possible.
+ The vi is designed to work with a calibrated hydrophone, permitting the voltage
+ data to be converted to pressure. The transducer can be operated in continuous
+ wave, burst, or single pulse modes.}
+ \label{fig:TestTrans}
+\end{center}
+\end{figure}
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=3 in]{BurstWires.eps}
+ \caption{Wiring diagram for equipment when using {\it TestTrans.vi}
+ with a therapy transducer and hydrophone. The function generator is the one
+ with GPIB address 11.}
+ \label{fig:BurstWires}
+\end{center}
+\end{figure}
+
+There are two options for the prf. The first mode is when the
+5900PR is used to examine the pulse from diagnostic transducer.
+This mode is selected when the control found under the {\it Exit}
+button reads {\it Manual PRF}. In this mode the HP33120A with GPIB
+address 11 is manually controlled to originate a PRF signal. The
+system wiring is like in Fig.~\ref{fig:BNCWires} except the input
+for Channel 1 on the DP110 is from the output of the hydrophone
+pre-amplifier instead of from the RF output of the 5900PR.
+
+The second mode of usage of {\it TestTrans.vi} is when a therapy
+type transducer is being characterized. For this mode, push the
+{\it Manual PRF}~\ button so that it reads {\it Burst Mode}. The
+PRF still comes from the SYNC output of the HP with GPIB address
+11 but now the output is a tone burst, generated by HP with GPIB
+address 10, is used to drive a therapy type transducer. The
+settings for the tone burst are selected via the vi rather than
+directly on the function generator. The system BNC wiring changes
+for this case are shown in Fig.~\ref{fig:BurstWires}.
+
+Like before, the input to Channel 1 of the DP110 is connected to
+the hydrophone output. The burst mode parameters are selected in
+{\it Set Up Digitizer} (Fig.~\ref{fig:SetDigi}). Only the Therapy
+Burst Set Up options for {\it Cycles, Therapy frequency,} and {\it
+Therapy amplitude} will have any effect. Also make sure the
+Trigger Settings has a Negative slope selected and that the
+coupling is set for AC 50 $\Omega$. This will ensure that the
+DP110 triggers at the start of a burst rather than the end of a
+burst.\footnote{The SYNC HP33120A drops low when the burst takes
+place, thus the need for a negative edge trigger.}
+
+Like for {\it manualcontrol.vi}, {\it TestTrans.vi} is started by
+pushing \includegraphics{runvi.eps}. After executing the vi, the
+Motion Control options are available with one new addition: {\it
+Go to Max}. {\it Go to Max} moves the transducer to the maximum
+parameter values after taking a 1-D or 2-D scan. This provides a
+means of moving the transducer to the position of maximum acoustic
+pressure. {\bf Only select {\it Go to Max} once after each new
+scan}.
+
+Before taking data, a region of the RF signal needs to be selected
+for digitization by using {\it Set up Digitizer}
+(Sec.~\ref{sec:digi}). The parameters of the 5900PR can also be
+adjusted with {\it Set Panametrics}. Now a transducer scan can be
+taken. Select a {\it Scan Length (mm)} and {\it Number of pts per
+scan} and the type of scan. The type of scan is chosen with a pull
+down menu (Fig.~\ref{fig:scantype}). The start position of the
+transducer is always the center point for any scan. Pushing {\it
+Scan} will start the scan. The PRF source from the switch box can
+either be from the function generator or from the motor PRF.
+
+\begin{figure}
+\begin{minipage}[t]{.45\textwidth}
+\begin{center}
+\includegraphics[width=1.5 in]{scantype.eps}
+ \caption{Pull down menu for scan type in {\it TestTrans.vi}}
+ \label{fig:scantype}
+\end{center}
+\end{minipage}
+\hspace{1 cm}
+\begin{minipage}[t]{.45\textwidth}
+\begin{center}
+\includegraphics[width=1.5 in]{pramsel.eps}
+ \caption{Pull down menu for scan type in {\it TestTrans.vi}}
+ \label{fig:pramsel}
+\end{center}
+\end{minipage}
+\end{figure}
+
+Once a scan is taken, the data is displayed in the plot of {\it
+TestTrans.vi}. If the scan was 1-D, then a normal 2 axis plot is
+displayed. If it was 2-D, then a 3-D plot is used. The axis of the
+plots are in mm. The vertical (intensity) parameter is chosen with
+the pull down menu labeled {\it Parameter Selection}
+(Fig.~\ref{fig:pramsel}). The vertical parameter is always shown
+as an absolute value and can be actively changed by changing {\it
+Parameter Selection}.
+
+The first four options of the parameter selection (Neg Peak, Pos
+Peak, Peak to Peak, RMS) are exactly what their name implies. The
+remaining parameters relate to definitions in the FDA 510(k)
+guidelines and require inputs from the {\it Pressure Cal
+Parameters} control (Fig.~\ref{fig:PresCal}). {\bf The parameters
+need to be selected before scanning.} Except for Neg Peak
+Pressure, they should only be used with a pulsed transducer. The
+{\it Center Freq (MHz)} needs to be determined by examining the
+spectrum of the signal in {\it SetUpDigi.vi}
+(Sec.~\ref{sec:digi}). {\it PRF (kHz)} is the PRF setting on the
+function generator. {\it Pulse Window ($\mu$s)} determines the
+data window to compute the pulse parameters. Use {\it
+SetUpDigi.vi} to see what time duration the pulse lasts. Finally,
+select which Precision Acoustics Lab hydrophone is being used.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=1.5 in]{PresCal.eps}
+ \caption{Input selections to obtain 510(k) parameters for transducer
+ scan. }
+ \label{fig:PresCal}
+\end{center}
+\end{figure}
+
+The parameters related to the Pressure Cal Parameters are computed
+from several parameters. The negative peak pressure $P_{min}$, a
+derating factor $a$=0.3 dB/(cm MHz), and the pulse intensity
+integral (PII)
+
+\begin{equation}\label{eq:Pgas}
+  PII=\int_{t_{0}}^{t_{1}}I(t) dt,
+\end{equation}
+
+where $t_{1}-t_{0}$ is {\it Pulse Window} and $I(t)$ is the
+instantaneous pulse intensity ($I=p^{2}/\rho c$). From these
+parameters we then find the pulse-average intensity
+$I_{pa}=PII/(t_{1}-t_{0}$) and the temporal-average intensity
+$I_{ta}=PII/PRF$. Derated values are then found by multiplying the
+pressures by $a$ and the intensities by~$a^{2}$. The path length
+used to compute a is assumed to be the separation between the
+source and hydrophone. This may not relate to the physical
+conditions in which the source is actually used.
+
+\section{Viewing EYE files}
+
+Use {\it ViewEyeFile.vi} to view an EYE file once it has been
+saved to disc. This program will automatically create a sector
+scan image if appropriate. A region of the EYE file can be viewed
+as a 3-D intensity plot or as a single scan line can be displayed
+as RF data. The region to view is selected with movable cursors in
+the EYE file. The header info can also be viewed.
+
+\subsection{Viewing a batch of EYE files as thumbnails}
+
+To view a batch of saved EYE files as a collection of thumbnails
+use {\it ViewPicts.vi}. When this program is executed, the user is
+prompted to select a directory. Choose the directory, then select
+the files to view in the list box display. When all the files are
+selected, push {\it Use Selected Files}. After a short time the
+thumbnails will be displayed with the file name overlaid on the
+image. If the EYE file was a sector scan it will be converted to a
+sector format.
+
+
+\section{Altering Headers}
+
+The VI {\it AlterHeader.vi} allows fields in a batch of EYE files
+to be changed. The files that will be changed are selected like
+what was discussed above in {\it ViewPicts.vi}. The fields that
+get changed need to have a check in the box to their right and a
+new value entered before pressing {\it Use Selected Files}. For
+example, the case in figure \ref{fig:AltHead} has two fields
+selected with check marks: \# rf lines per scan and sample rate
+MHz. When {\it Use Selected Files} is pushed, the selected EYE
+files (rri.eye for this example) will have their header updated
+with the new values.
+
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=5 in]{AlterHead.eps}
+ \caption{Control panel of {\it AlterHeader.vi} which allows
+ fields in the header of EYE files to be added or changed.}
+ \label{fig:AltHead}
+\end{center}
+\end{figure}
+
+\section{3D image prep}
+
+There is now one application to prepare data for plotting in 3-D
+({\it 3DVisPrep.vi}). The NoEsys software component T3D seems to
+be the easiest application to view volumetric data. To read data
+directly into T3D, it can be saved as a byte file or as ASCII
+text. All data planes are saved in one file. The data can then be
+read into T3D and the dimensions of ($X,Y,Z$) are entered. RGB
+bitmap planes can also be converted to a single byte file.
+
+The program asks for the root file name of all the planes, the
+number of planes, and the directory of the files. For example, if
+the data is in spreadsheet format and name {\it plane1.txt} and
+{\it plane2.txt}, the root file name is plane and the number of
+files is 2. {\bf Spreadsheet files need to end with {\it txt} and
+RGB BMP files with {\it bmp}}. The user chooses what kind of
+conversion to make and the output is saved to the chosen file
+name. The output files are numbered if more than one is generated.
+
+
+
+
+\end{document}

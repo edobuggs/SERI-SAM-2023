@@ -1,0 +1,16 @@
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_PROFILE_CSV 1
+# TIMESTAMPFACTOR 125739121436a3ab
+# CUDA_DEVICE 0 GeForce GTX 590
+gpustarttimestamp,method,gputime,cputime,occupancy,gridSizeX,gridSizeY,gridSizeZ,blockSizeX,blockSizeY,blockSizeZ,dynSmemPerBlock,staSmemPerBlock,registerPerThread,streamID,localblocksize,memTransferSize,memtransferhostmemtype,local_load,local_store,gld_request,gst_request,shared_load,shared_store,sm_cta_launched,l1_local_load_hit,branch,l1_local_load_miss,l1_local_store_hit,divergent_branch,l1_local_store_miss,l1_global_load_hit,inst_issued,l1_global_load_miss,inst_executed,uncached_global_load_transaction,global_store_transaction,warps_launched,threads_launched,l1_shared_bank_conflict,active_warps,active_cycles,l2 read requests,l2 read texture requests,l2 write requests,l2 read misses,l2 write misses,tex cache requests,tex cache misses,threads instruction executed,dram reads,dram writes
+1258b485684b8aa0,memset32_aligned1D,126.688,7.718,1,25518,1,1,192,1,1,0,0,3,0,-1,,0,0,0,0,9660,0,0,1641,0,19392,0,0,0,0,0,118871,0,115704,0,9642,9708,310656,0,2186865,72182,0,0,612422,126,608380,0,0,3757824,126,608193
+1258b485684d8440,memset32_aligned1D,124.064,2.685,1,25518,1,1,192,1,1,0,0,3,0,-1,,0,0,0,0,9702,0,0,1626,0,19464,0,0,0,0,0,119379,0,117072,0,9756,9702,310464,0,2191898,71817,0,0,612422,127,607513,0,0,3703680,119,607322
+1258b485684f73c0,memset8,12.8,2.014,1,511,1,1,192,1,1,0,0,8,0,-1,,0,0,0,0,194,0,0,32,0,1921,0,0,1,0,0,10172,0,9776,0,379,192,6144,0,297625,7101,0,0,15313,51,13183,0,0,313602,51,13183
+1258b485684fb080,memset32_aligned1D,1.376,1.678,0.125,1,1,1,192,1,1,0,0,3,0,-1,,0,0,0,0,1,0,0,1,0,12,0,0,0,0,0,69,0,57,0,1,6,192,0,2923,487,0,0,2,16,2,0,0,1824,16,2
+1258b485685148e0,memcpyHtoD,1.408,328.872,,,,,,,,,,,0,0,204,0
+1258b48568593360,memcpyHtoD,2596.83,2753.13,,,,,,,,,,,0,0,9798750,0
+1258b48568822c60,memcpyHtoD,1.408,5.705,,,,,,,,,,,0,0,40,0
+1258b4856883f320,_Z12demodulationPsS_PciiiPf,3663.36,9.732,1,201,25,1,256,1,1,1950,208,17,0,-1,,0,0,0,19782,37680,1243440,19782,314,0,67608,0,0,0,0,19167,3815852,5061,3747240,0,56500,2520,80640,0,86513299,2225756,323396,0,1795182,306471,1779649,0,0,119721344,306479,1779649
+1258b48568bbe400,_Z15calChannelDelayPfiiS_i,3.68,2.014,0.667,1,2,1,512,1,1,0,0,10,0,-1,,0,0,0,160,80,0,0,1,0,128,0,0,0,0,159,1786,1,1504,0,144,16,512,0,28235,1905,8,0,734,51,656,0,0,48128,51,656
+1258b48568bbfd60,_Z11beamformingPsS_S_iPfiii,462.944,2.014,1,201,2,1,512,1,1,0,0,20,0,-1,,0,0,0,48320,384,0,0,25,0,23248,0,0,32,0,51572,498152,37707,423460,0,572,384,12288,0,11397374,269494,2399952,0,18077,1112701,17208,0,0,13394242,1113563,17208
+1258b48568c31a20,memcpyDtoH,64.448,4498.5,,,,,,,,,,,0,0,391950,0

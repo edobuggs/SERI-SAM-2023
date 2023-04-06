@@ -1,0 +1,153 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>15.0f2</Version>
+<Array>
+<Name></Name>
+<Dimsize>5</Dimsize>
+<Cluster>
+<Name>Computer Name/Location</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>biomain-n-wk.rri-usa.org</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>RR Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>RR Microscopy</Choice>
+<Choice>RR Aeoretch</Choice>
+<Choice>RR Optics Lab</Choice>
+<Choice>RR Main 2Axis</Choice>
+<Choice>RR Rotation</Choice>
+<Choice>SUNY Debug</Choice>
+<Val>1</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name/Location</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>biomain2-n-wk.rri-usa.org</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>RR Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>RR Microscopy</Choice>
+<Choice>RR Aeoretch</Choice>
+<Choice>RR Optics Lab</Choice>
+<Choice>RR Main 2Axis</Choice>
+<Choice>RR Rotation</Choice>
+<Choice>SUNY Debug</Choice>
+<Val>1</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name/Location</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>nyro-opticsrack.rri-usa.org</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>RR Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>RR Microscopy</Choice>
+<Choice>RR Aeoretch</Choice>
+<Choice>RR Optics Lab</Choice>
+<Choice>RR Main 2Axis</Choice>
+<Choice>RR Rotation</Choice>
+<Choice>SUNY Debug</Choice>
+<Val>11</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name/Location</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SUNY.rri.local</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>RR Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>RR Microscopy</Choice>
+<Choice>RR Aeoretch</Choice>
+<Choice>RR Optics Lab</Choice>
+<Choice>RR Main 2Axis</Choice>
+<Choice>RR Rotation</Choice>
+<Choice>SUNY Debug</Choice>
+<Val>10</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name/Location</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SUNY.rri-usa.local</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>RR Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>RR Microscopy</Choice>
+<Choice>RR Aeoretch</Choice>
+<Choice>RR Optics Lab</Choice>
+<Choice>RR Main 2Axis</Choice>
+<Choice>RR Rotation</Choice>
+<Choice>SUNY Debug</Choice>
+<Val>10</Val>
+</EW>
+</Cluster>
+</Array>
+</LVData>

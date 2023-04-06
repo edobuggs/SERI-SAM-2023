@@ -1,0 +1,340 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>16.0</Version>
+<Cluster>
+<Name>Dual XDCR Settings</Name>
+<NumElts>5</NumElts>
+<Array>
+<Name>Offset Axes</Name>
+<Dimsize>3</Dimsize>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>3</Val>
+</U16>
+</Array>
+<Array>
+<Name>Scan Size</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>9.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>9.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>8.00000000000000</Val>
+</DBL>
+</Array>
+<Array>
+<Name>XDCR Offset</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>-27.50000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>0.40000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Array>
+<Boolean>
+<Name>Found Home</Name>
+<Val>0</Val>
+</Boolean>
+<Array>
+<Name>XDCR Settings</Name>
+<Dimsize>2</Dimsize>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Transducer Name</Name>
+<Val>T4</Val>
+</String>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>25.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>25.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>400.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>5.00000000000000E-2</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>10</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>12.70000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>12.70000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>30</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>100</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>31</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Panametrics Settings</Name>
+<NumElts>9</NumElts>
+<U16>
+<Name>ENERGY (uJ)</Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>DAMPING (Ohm)</Name>
+<Val>7</Val>
+</U16>
+<U16>
+<Name>HP FILT (KHz) </Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>LP FILT (MHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>MODE</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>PRF (KHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>GAIN (db)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>COARSE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>FINE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Transducer Name</Name>
+<Val>T8</Val>
+</String>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>25.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>25.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>400.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>5.00000000000000E-2</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>10</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>12.70000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>12.70000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>10</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>100</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>28</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Panametrics Settings</Name>
+<NumElts>9</NumElts>
+<U16>
+<Name>ENERGY (uJ)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>DAMPING (Ohm)</Name>
+<Val>7</Val>
+</U16>
+<U16>
+<Name>HP FILT (KHz) </Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>LP FILT (MHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>MODE</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>PRF (KHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>GAIN (db)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>COARSE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>FINE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+</Cluster>
+</Cluster>
+</Array>
+</Cluster>
+</LVData>

@@ -1,0 +1,17 @@
+NAME	     TRAP-LV
+
+DESCRIPTION  'Program to test calling rap-lvie.dll OR simple.dll'
+
+EXETYPE      WINDOWS
+
+STUB	     'WINSTUB.EXE'
+
+CODE	     PRELOAD MOVEABLE DISCARDABLE
+DATA	     PRELOAD MOVEABLE MULTIPLE
+
+HEAPSIZE     1024
+STACKSIZE    8094 
+IMPORTS
+	'c:\orlando\c\simple'.TESTFUNC
+
+    

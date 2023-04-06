@@ -1,0 +1,26 @@
+Note that 4 axis configurations will load into 2 axis controller but only axis 1 and 2
+
+Motion Profiles (Always a small risk that loaded profile has been altered from these xml files). Never hurts to look at time stamp.
+
+Aerotech Sys.xml - Aerotech motion stages at RRI and in HI (4 Axis controller)
+
+Aerotech RRI.xml - Aerotech stages at RRI. Should be same as above (4 axis controller)
+
+Servo 7350 Rot.xml - Old newport motors plus mounted motor (4 axis)
+
+SMAC RRI Original.xml - Old Newport stages and SMAC stage (4 axis)
+
+SMAC 2AxisRRI.xml - Cross axis Newport plus SMAC (using axis 1 and 4 but for 4 axis controller)
+
+SMAC 2AxisNYU.xml - Cross axis Newport plus SMAC (2 axis controller)
+	axis 1 is SMAC and axis 2 is cross axis. Different cross axis motor than at RRI (Slower)
+
+RRI Newport New.xml - New set of 3 newport stages. No 4th axis configured (4axis controller)
+
+
+
+
+Obsolete
+
+Servo 7350 LinInd.xml - Old newport motor set plus obsolete linear induction stage (4 Axis controller)
+Stepper 7350 - Old set of stepper motors in boxes at RRI.

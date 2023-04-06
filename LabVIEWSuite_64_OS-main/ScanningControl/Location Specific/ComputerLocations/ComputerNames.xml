@@ -1,0 +1,287 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>22.3f0</Version>
+<Array>
+<Name></Name>
+<Dimsize>9</Dimsize>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SUNY</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>10</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SilvermanLab.cpmc.columbia.edu</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>4</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>Array-PC.skb.med.nyu.edu</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>5</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>yama-036</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>9</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>DESKTOP-PIBFQSO</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>0</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>PC305435.a.wcmc-ad.net</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>15</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>pc305434.a.wcmc-ad.net</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>1</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SAMson</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>17</Val>
+</EW>
+</Cluster>
+<Cluster>
+<Name>Computer Name Out</Name>
+<NumElts>2</NumElts>
+<String>
+<Name>Computer Name</Name>
+<Val>SAMson.ransnet.com</Val>
+</String>
+<EW>
+<Name>Location</Name>
+<Choice>Automatic</Choice>
+<Choice>WCM Main</Choice>
+<Choice>Hawaii</Choice>
+<Choice>Columbia MM3000</Choice>
+<Choice>Columbia  NI System</Choice>
+<Choice>NYU</Choice>
+<Choice>RRI 2</Choice>
+<Choice>UHI Allen</Choice>
+<Choice>CUMC RT</Choice>
+<Choice>Chiba</Choice>
+<Choice>Stony Brook</Choice>
+<Choice>WCM Microscopy</Choice>
+<Choice>WCM Aeoretch</Choice>
+<Choice>WCM Optics Lab</Choice>
+<Choice>WCM Main 2Axis</Choice>
+<Choice>WCM Rotation</Choice>
+<Choice>WCM SAM SMAC</Choice>
+<Choice>SERI GP</Choice>
+<Choice>SERI SAM 2023</Choice>
+<Val>18</Val>
+</EW>
+</Cluster>
+</Array>
+</LVData>

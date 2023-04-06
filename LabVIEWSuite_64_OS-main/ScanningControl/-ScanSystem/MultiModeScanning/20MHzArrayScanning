@@ -1,0 +1,528 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>16.0</Version>
+<Cluster>
+<Name>ScanSettings</Name>
+<NumElts>4</NumElts>
+<EW>
+<Name>Type of scan</Name>
+<Choice>Therapy With Scan</Choice>
+<Choice>M scan</Choice>
+<Choice>M Scan With Therapy Burst</Choice>
+<Choice>1-D B Scan</Choice>
+<Choice>1-D B Scan With Therapy Burst</Choice>
+<Choice>2-D B Scan</Choice>
+<Choice>2-D B Scan With Therapy Burst</Choice>
+<Choice>Rotational Scan</Choice>
+<Choice>1-D B-Scan PRF</Choice>
+<Choice>2-D B-Scan PRF</Choice>
+<Choice>Real-Time Scan</Choice>
+<Choice>Contrast Agents</Choice>
+<Choice>1-D w/ Real-Time Set Up</Choice>
+<Choice>Dual Transducer</Choice>
+<Choice>Acoustic Microscopy</Choice>
+<Choice>Hydrophone Scanning</Choice>
+<Val>3</Val>
+</EW>
+<Cluster>
+<Name>Motion Settings In</Name>
+<NumElts>26</NumElts>
+<Boolean>
+<Name>No Motion?</Name>
+<Val>0</Val>
+</Boolean>
+<EW>
+<Name>Motion System</Name>
+<Choice>MM3000</Choice>
+<Choice>NI 735x</Choice>
+<Choice>Newport ESP</Choice>
+<Choice>No Motion Card</Choice>
+<Val>1</Val>
+</EW>
+<U8>
+<Name>Board ID</Name>
+<Val>1</Val>
+</U8>
+<String>
+<Name>Motion Profile</Name>
+<Val>SMAC</Val>
+</String>
+<I8>
+<Name># Axis</Name>
+<Val>4</Val>
+</I8>
+<Boolean>
+<Name>Reverse Z axis?</Name>
+<Val>1</Val>
+</Boolean>
+<U16>
+<Name>SMAC Axis</Name>
+<Val>4</Val>
+</U16>
+<U16>
+<Name>scan pair</Name>
+<Val>6</Val>
+</U16>
+<SGL>
+<Name>RT fps</Name>
+<Val>6.00000</Val>
+</SGL>
+<Array>
+<Name>Steps per mm</Name>
+<Dimsize>4</Dimsize>
+<I32>
+<Name>Steps</Name>
+<Val>1000</Val>
+</I32>
+<I32>
+<Name>Steps</Name>
+<Val>1000</Val>
+</I32>
+<I32>
+<Name>Steps</Name>
+<Val>1000</Val>
+</I32>
+<I32>
+<Name>Steps</Name>
+<Val>1000</Val>
+</I32>
+</Array>
+<Cluster>
+<Name>Motor Parameters</Name>
+<NumElts>2</NumElts>
+<Array>
+<Name>velocity ct/s</Name>
+<Dimsize>4</Dimsize>
+<DBL>
+<Name></Name>
+<Val>20000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>20000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>10000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>49999.99999999999990</Val>
+</DBL>
+</Array>
+<Array>
+<Name>accel ct/s^2</Name>
+<Dimsize>4</Dimsize>
+<DBL>
+<Name></Name>
+<Val>100000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>100000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>49999.99999999999990</Val>
+</DBL>
+<DBL>
+<Name></Name>
+<Val>200000.00000000000000</Val>
+</DBL>
+</Array>
+</Cluster>
+<Boolean>
+<Name>One Way Scan</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Reverse One Way Scan</Name>
+<Val>0</Val>
+</Boolean>
+<Array>
+<Name>Global Position (mm)</Name>
+<Dimsize>4</Dimsize>
+<DBL>
+<Name>Numeric</Name>
+<Val>-2.27900000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>-0.21700000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>-0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>-0.64500000000000</Val>
+</DBL>
+</Array>
+<I32>
+<Name>Plane</Name>
+<Val>0</Val>
+</I32>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>25.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>100.00000</Val>
+</SGL>
+<I32>
+<Name>number of scan planes</Name>
+<Val>1</Val>
+</I32>
+<I32>
+<Name>Total steps in line</Name>
+<Val>10000</Val>
+</I32>
+<I32>
+<Name>Xtra plane
+distance  (um)</Name>
+<Val>100</Val>
+</I32>
+<I32>
+<Name>Xtra planes </Name>
+<Val>1</Val>
+</I32>
+<Boolean>
+<Name>Add Axis</Name>
+<Val>0</Val>
+</Boolean>
+<I32>
+<Name>overshoot cts</Name>
+<Val>200</Val>
+</I32>
+<I32>
+<Name>BKPT Shift</Name>
+<Val>0</Val>
+</I32>
+<U32>
+<Name>Scan Start Time (ms)</Name>
+<Val>0</Val>
+</U32>
+<Refnum>
+<Name>ESP VISA</Name>
+<RefKind>VISA</RefKind>
+<Val>GPIB::1::INSTR</Val>
+</Refnum>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>26</NumElts>
+<DBL>
+<Name>Digitizer delay (us) </Name>
+<Val>24.00000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>3500</Val>
+</I32>
+<I32>
+<Name>lines per plane</Name>
+<Val>401</Val>
+</I32>
+<DBL>
+<Name>Samp Rate (Hz)</Name>
+<Val>100000000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (us)</Name>
+<Val>2.87037037037037</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>0.20000000000000</Val>
+</DBL>
+<I32>
+<Name>Pre-Looks</Name>
+<Val>0</Val>
+</I32>
+<DBL>
+<Name>Offset delay (us)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<I8>
+<Name>bits A/D</Name>
+<Val>8</Val>
+</I8>
+<I32>
+<Name>Avg Num</Name>
+<Val>1</Val>
+</I32>
+<SGL>
+<Name>DigTimeOut</Name>
+<Val>5.00000</Val>
+</SGL>
+<SGL>
+<Name>Rel Dig Delay</Name>
+<Val>0.00000</Val>
+</SGL>
+<I32>
+<Name>Dig Ch</Name>
+<Val>0</Val>
+</I32>
+<Cluster>
+<Name>LeCroyCluster</Name>
+<NumElts>3</NumElts>
+<Array>
+<Name>LeCroy Channels</Name>
+<Dimsize>4</Dimsize>
+<Boolean>
+<Name>Boolean</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>Boolean</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Boolean</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Boolean</Name>
+<Val>0</Val>
+</Boolean>
+</Array>
+<DBL>
+<Name>LC read pt offset</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Boolean>
+<Name>Sweep Avg</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+<EW>
+<Name>Main Digitizer</Name>
+<Choice>Acqiris Digitizer</Choice>
+<Choice>NI Digitizer</Choice>
+<Choice>LeCroy</Choice>
+<Choice>GaGe</Choice>
+<Choice>AlazarTech</Choice>
+<Choice>No Digitizer</Choice>
+<Choice>Not used</Choice>
+<Val>1</Val>
+</EW>
+<EW>
+<Name>Dig Config</Name>
+<Choice>Single channel</Choice>
+<Choice>2 Chans w/ 2 Acqiris</Choice>
+<Choice>2 Chans w/ 1 Acqiris</Choice>
+<Choice>In Development</Choice>
+<Choice>5-CH pulser w/ ann array</Choice>
+<Choice>5-pass style ann array</Choice>
+<Val>5</Val>
+</EW>
+<Cluster>
+<Name>Digitizer ID Cluster</Name>
+<NumElts>6</NumElts>
+<Array>
+<Name>Acqiris/Alazar ID</Name>
+<Dimsize>0</Dimsize>
+<U32>
+<Name>Acq ID</Name>
+<Val></Val>
+</U32>
+</Array>
+<Array>
+<Name>NI Instr Handles</Name>
+<Dimsize>3</Dimsize>
+<Refnum>
+<Name>NI Ref</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig1 (9)</Val>
+</Refnum>
+<Refnum>
+<Name>NI Ref</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig2 (1)</Val>
+</Refnum>
+<Refnum>
+<Name>NI Ref</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig3 (1)</Val>
+</Refnum>
+</Array>
+<Refnum>
+<Name>LeCroy VISA</Name>
+<RefKind>VISA</RefKind>
+<Val></Val>
+</Refnum>
+<Cluster>
+<Name>GaGe Handle</Name>
+<NumElts>6</NumElts>
+<U32>
+<Name>Handle</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>Sample size</Name>
+<Val>0</Val>
+</U32>
+<I32>
+<Name>Resolution</Name>
+<Val>0</Val>
+</I32>
+<I32>
+<Name>Offset</Name>
+<Val>0</Val>
+</I32>
+<U32>
+<Name>Channels</Name>
+<Val>0</Val>
+</U32>
+<U32>
+<Name>Boards</Name>
+<Val>0</Val>
+</U32>
+</Cluster>
+<String>
+<Name>ATS Ref</Name>
+<Val>ATS9350</Val>
+</String>
+<Array>
+<Name>Acquris Address</Name>
+<Dimsize>1</Dimsize>
+<String>
+<Name>Resource Name (PCI::INSTR0)</Name>
+<Val>PCI::INSTR0</Val>
+</String>
+</Array>
+</Cluster>
+<Cluster>
+<Name>Trigger Settings</Name>
+<NumElts>4</NumElts>
+<U16>
+<Name>Trig Source</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>Trig Coupling</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>Trig Slope</Name>
+<Val>0</Val>
+</U16>
+<DBL>
+<Name>Level (mV)</Name>
+<Val>1500.00000000000000</Val>
+</DBL>
+</Cluster>
+<Boolean>
+<Name>Bulk Acq</Name>
+<Val>0</Val>
+</Boolean>
+<Array>
+<Name>Bulk Start Indexes</Name>
+<Dimsize>0</Dimsize>
+<I32>
+<Name>Fetch:Records Done</Name>
+<Val></Val>
+</I32>
+</Array>
+<Refnum>
+<Name>Data Ref RF</Name>
+<RefKind>Data Value Reference</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<Array>
+<Name>NI ID/Channel</Name>
+<Dimsize>5</Dimsize>
+<Cluster>
+<Name></Name>
+<NumElts>2</NumElts>
+<Refnum>
+<Name>NI ID</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig1 (9)</Val>
+</Refnum>
+<I32>
+<Name>NI CH</Name>
+<Val>0</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name></Name>
+<NumElts>2</NumElts>
+<Refnum>
+<Name>NI ID</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig1 (9)</Val>
+</Refnum>
+<I32>
+<Name>NI CH</Name>
+<Val>1</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name></Name>
+<NumElts>2</NumElts>
+<Refnum>
+<Name>NI ID</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig2 (1)</Val>
+</Refnum>
+<I32>
+<Name>NI CH</Name>
+<Val>0</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name></Name>
+<NumElts>2</NumElts>
+<Refnum>
+<Name>NI ID</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig2 (1)</Val>
+</Refnum>
+<I32>
+<Name>NI CH</Name>
+<Val>1</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name></Name>
+<NumElts>2</NumElts>
+<Refnum>
+<Name>NI ID</Name>
+<RefKind>IVI</RefKind>
+<Val>Dig3 (1)</Val>
+</Refnum>
+<I32>
+<Name>NI CH</Name>
+<Val>1</Val>
+</I32>
+</Cluster>
+</Array>
+<I32>
+<Name>Total Dig CH</Name>
+<Val>5</Val>
+</I32>
+<DBL>
+<Name>Xtra Ann Trig delay (us)</Name>
+<Val>10.00000000000000</Val>
+</DBL>
+<Boolean>
+<Name>Fix Z Delay?</Name>
+<Val>0</Val>
+</Boolean>
+<Refnum>
+<Name>Data Ref Log</Name>
+<RefKind>Data Value Reference</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+</Cluster>
+<String>
+<Name>Case Name Modifier</Name>
+<Val>Case</Val>
+</String>
+</Cluster>
+</LVData>

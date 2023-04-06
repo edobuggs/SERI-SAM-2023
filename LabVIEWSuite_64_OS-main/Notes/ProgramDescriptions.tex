@@ -1,0 +1,989 @@
+\documentclass[10pt]{article}
+\usepackage{srcltx}
+%\usepackage[letterpaper,urlcolor=blue,dvips,colorlinks=true]{hyperref}
+
+\textwidth 6 in \textheight 8.75 in
+
+\voffset-.75in \oddsidemargin.25in \evensidemargin.25in
+
+\begin{document}
+
+\begin{center}
+ {\huge \bf Riverside Research Institute}
+\end{center}
+
+{\bf To:} Biomed group
+
+{\bf From:} Jeff Ketterling
+
+{\bf Date:} Updated \today
+
+{\bf Subject:} LabVIEW programs as of now
+ \vspace{0.5 cm}
+
+The LabVIEW programs written so far are briefly discussed,
+including the subprograms. These programs evolve quickly and may
+not reflect the most current version. Most programs have notes
+included in the diagram window of the VI. Theses notes indicate
+what the programs are doing. Some are more straightforward than
+others. The programs will be listed as I now have them divided
+into folders. Some calls to subVIs are made between the divisions
+I have set up. The programs listed under the Main programs
+headings have a user friendly interface and are meant for a
+specific purpose. The Subprograms sections list the support
+programs used by the Main programs.
+
+\vspace{0.5 cm}
+ \hline
+\vspace{0.5 cm}
+
+\section{ViewData}
+\subsection{Main programs}
+\subsubsection{{\it AlterHeader.vi}}
+
+Allows header info in EYE files to be altered on a field by field
+basis. Can change any number of selected EYE files in a single
+directory.
+
+\subsubsection{{\it BinFFT.vi}}
+
+This is a sub-program used by SpecFilter.vi. It is where most of
+the processing occurs.
+
+\subsubsection{{\it BytetoBMP.vi}}
+
+Convert an 8 bit byte stream file into a BMP image. Used for
+images created for prostate work but can be adapted for other
+uses.
+
+\subsubsection{{\it InterpSecImage.vi}}
+
+This program is now obsolete. This VI converts a sector scan into
+a polar type of display. The implementation is rather slow because
+the intensity values are interpolated to give a final image evenly
+spaced in $x$ and $y$ coordinates.
+
+\subsubsection{{\it SpecFilter.vi}}
+
+This program is a method of reducing speckle when creating B-mode
+images from EYE files. Take an FFT of each scan line of the eye
+file, separate the transmission band into several bins, convert
+back to time domain, add the bins, and then display the image.
+
+\subsubsection{{\it ViewEye.vi}}
+
+Multipurpose program to view an eye file and blow up certain
+features. A section of the original data can be boxed to give a
+3-D rotational view of the data. The data can also be viewed as
+individual lines. If the image is a sector scan, a conversion is
+made to display it as a true sector scan image. Can also select to
+see a pop up window with all the parameters in the EYE file
+header.
+
+\subsubsection{{\it ViewPicts.vi}}
+
+Little program to view a sequence of images as a series of
+bitmaps. If the images are sector scans, they are displayed
+accordingly. The name of the file is overlaid on the image in the
+upper right hand corner. User chooses a directory and then the EYE
+files to view as Picts.
+
+
+
+\subsection{Subprograms}
+
+\subsubsection{{\it ReadEye.llb}}
+
+This library contains VIs to extract info from the EYE files.
+Right now they can also read Ron's Cornell linear scan format to a
+limited extent. The following VI's extract info from the header as
+it is lumped in our EYE format: {\it A/DInfo.vi,
+CalibrationInfo.vi, HeaderInfo.vi, OtherInfo.vi, PatientInfo.vi,
+RFInfo.vi, ScanInfo.vi, ScanSystemInfo.vi, TGC\&RF\_ADInfo.vi,
+TherapyInfo.vi, Time/DateInfo.vi, TissueType.vi,
+TransducerInfo.vi}. There are also some more specialized VIs.
+
+\begin{enumerate}
+\item {\it MakeHeader.vi}
+
+Assemble all header info into a string format which can be
+appended to an EYE file.
+
+\item {\it ReadHead.vi}
+
+Read all the info from the header and makes it available in
+clusters corresponding to the info sections just listed above.
+Also output the whole 1024 byte header.
+
+\item {\it ReadEyeFile.vi}
+
+Reads info from the EYE file and makes it available as a 2-D array
+with the columns corresponding to scan lines. Also makes some
+other variable available.
+
+\item {\it RonLinear.vi}
+
+Like {\it ReadEyeFile.vi} but for Cornell linear scan format.
+
+\item {\it SetStringLength.vi}
+
+Sets the length of a string to equal a specified number of
+characters. Used to make the text fields the appropriate length in
+the header.
+
+\item {\it ViewLine.vi}
+
+Makes a single line from an EYE file available for viewing.
+
+\end{enumerate}
+
+\subsubsection{{\it SectorDisplay.llb}}
+
+This library contains the VIs used to convert a rectangular array
+of data into a sector image.
+
+\begin{enumerate}
+\item {\it AxisRanges.vi}
+
+Pull out the max and min x and y values of the sector image once
+it has been converted from polar to rectangular. Used to scale the
+data and represent distance on the x and y axis.
+
+\item {\it BytestoArray.vi}
+
+Convert 8 bit values to scaled values. Need to know high and low
+scaling parameters used to create byte file.
+
+\item {\it CheckForSec.vi}
+
+Looks at file header to see if EYE file is a sector scan. If so
+outputs a boolean argument. One output for if it is a sector scan
+and another for if it is a scan greater than 180 degrees.
+
+\item {\it ConvertToSec.vi}
+
+Converts an image to a sector format. Outputs the z values as an
+array and a bitmap.
+
+\item {\it InterpAxis.vi}
+
+Used when forming a new sector image by interpolating along the x
+and y axis. Called by {\it InterpSecImage.vi} and therefore not
+used anymore.
+
+\item {\it InterpHoles.vi}
+
+Take a freshly mapped sector image and fill in ``holes'' where no
+value was inserted. Fills in a hole with an interpolated value
+along the horizontal axis (cross range direction).
+
+\item {\it LogScaleImage.vi}
+
+Takes the absolute value of the image data and compresses it
+logarithmically. Then scales the data so a value of 128 is still
+128 after scaling.
+
+\item {\it MakePict.vi}
+
+Convert a data array to a Pict format. Have choice of how to scale
+data. Can use logarithmic compression of linear scaling. All
+methods scale back to 256.
+
+\item {\it OverlaySectorRoi.vi}
+
+Overlays a rectangular ROI onto the sector image. The reverse is
+not set up. That is, an ROI cannot be chosen on the sector image
+which then maps back to a rectangle on the original non-sector
+image.
+
+\item {\it OverSample.vi}
+
+Use this for Hitachi data when converting to sector format. The RF
+data is first reduced down and then each scan line is duplicated
+twice before converting to a sector format. This fills out the
+image at the far ranges and leads to a better looking image.
+
+\item {\it PictFromEye.vi}
+
+Make a Pict of the EYE file data and overlay the name of the EYE
+file on the image.
+
+\item {\it PolarToRect.vi}
+
+Convert the original polar coordinates of the scan data into
+rectangular ($X,Y$) coordinates. The RF data can also be reduced
+to speed up image conversion. This is done by reducing the rows
+(RF pts) by some user selected value.
+
+\item {\it RescaleAxis.vi}
+
+Re-scale the ($X,Y$) data that has been converted from polar
+coordinates so that the max $X$ and $Y$ values correspond to the
+number of rows and columns, respectively, in the final sector
+image. The ($X,Y$) data now spans from zero to the number of rows
+or columns and the data can be dropped into an empty matrix with
+the indices corresponding to the re-scaled ($X,Y$) values. Note
+($X,Y$) gets rounded off when dropped into a display matrix.
+
+\item {\it ROIEdges.vi}
+
+Determine the coordinates of the rectangular edges of the ROI.
+Used to overlay the corresponding ROI on the sector image.
+
+\item {\it ScaleAxisBack.vi}
+
+Take indices in sector image and convert them back to $(X,Y)$
+coordinates or to indices from original data array.
+
+\item {\it SectorOverlay.vi}
+
+This is where the sector image is inserted into an empty array.
+Uses pixel locations to replace empty elements with image values.
+Image has ``holes'' filled in with interpolation by InterpHoles.vi
+and is then smoothed with {\it SmoothImage.vi}.
+
+\item {\it SmoothImage.vi}
+
+Rough smoothing of sector image. Can either take an average of the
+surrounding points or take the max value of the surrounding
+points.
+
+\end{enumerate}
+
+\section{FreqAnalysis}
+
+
+\subsection{Main programs}
+
+\subsubsection{{\it 1-DSpecViewAndFit.vi}}
+
+Allows a spectrum to be taken for the selected ROI. The resulting
+spectrum can be used to make a CAL file or to find fit parameters
+for a specified frequency range. The CAL file and fit range can be
+read from the file header or input by the user. The resulting fit
+parameters can be saved to a {\it Spectra.txt} file with the
+format currently in use. The user can specify if the data should
+be forced to a certain length FFT. This may be important if a CAL
+is subtracted from the data. The ROI needs to be twice the length
+of the cal file.
+
+\subsubsection{{\it 2-DSpecView.vi}}
+
+Will perform  2-D spectra analysis on the selected ROI. Can
+subtract a CAL from the data if desired.
+
+
+\subsubsection{{\it AOIParams.vi}}
+
+Allows sliding window data taken with {\it WholeImageROIFit.vi} to
+be analyzed with a cylindrical Area of Interest (AOI) or a free
+drawn AOI. The parameter values (midband fit, slope, and
+intercept) in the AOI are averaged to give a single fit value for
+the AOI. Can look at any of the fit images and the results come
+out for all three.
+
+\subsubsection{{\it BiopsyBatch.vi}}
+
+Process prostate EYE file data from B\&K machines either on a case
+by case basis or as a batch. Biopsy AOI is taken based on a
+straight line in the sector co-ordinate system which is then
+converted back to the raw data form. AOI can either be between two
+parallel lines or a fixed number of points (normally 110). Batch
+processing is either done with all EYE files in a single directory
+or from a text list of files. Data is saved in the Spectra.txt
+format.
+
+\subsubsection{{\it Color.vi}}
+
+Open parameter image files and lookup table, then color code
+image.
+
+\subsubsection{{\it ConAgent.vi}}
+
+Process contrast agent data.
+
+\subsubsection{{\it ScatProps.vi}}
+
+Compute $CQ^{2}$ properties. Program is rough and not ready for
+any particular use.
+
+\subsubsection{{\it SectorBiopsy.vi}}
+
+Program is similar to BiopsyBatch.vi but is geared more towards
+data from the Hitachi. A rectangular ROI is define in the sector
+image and converted to the raw data format. The region of the ROI
+is then extracted from the data as a sub-set and sliding FFT
+analysis is performed on it, creating a parameter image of the
+ROI. An average value is then found for the ROI. The Hitachi cross
+calibration file is used for the analysis. Program can be run on a
+case by case basis or in batch mode. Results are saved in
+Spectra.txt.
+
+\subsubsection{{\it WholeImageROIFit.vi}}
+
+Analyze an EYE file with a sliding ROI and return the resulting
+slope, intercept, and mid-band fit data. A fit is also made to the
+Cal data and this can be subtracted from the final results. The
+program  is presently geared to make parameter images that cover
+all the scan lines with a 64 pt window that increments by 8 RF
+points. The program can be easily modified, though, to allow the
+size or the ROI and how may points should be in the $X$ and $Y$
+direction of the final image. Data can be saved in a variety of
+formats and is put in a folder named Param Images in the same
+directory as the EYE files.
+
+
+\subsection{Subprograms}
+
+\subsubsection{{\it FreqAnalysis.llb}}
+
+
+\begin{enumerate}
+\item {\it 1DROISpectrum.vi}
+
+Take the 1-D power spectrum of the input signal. Data is passed
+through a Hamming window and then zero padded before taking the
+FFT. The output can be converted to dB or left as ``raw'' data.
+Phase information is available if ever needed.
+
+\item {\it 2DROISpectrum.vi}
+
+Take the 2-D FFT of a ROI. A CAL file can be subtracted from the
+end result.
+
+\item {\it AOICoords.vi}
+
+Determine the indices for the AOI selected with {\it
+AOIParams.vi}. The program returns the row numbers, the start
+column, and number of points to take for the AOI.
+
+
+\item {\it AttenCorr.vi}
+
+Small program to find attenuation correction as a function of
+range. Default $\alpha$=0.5 db/cm~MHz. Can be used for both
+parameter images or RF data. Output is an array to correct
+midband, $2 \alpha x f_{c}$, and one to correct slope, $2\alpha
+f_{c}$.
+
+\item{{\it ColorEncode.vi}}
+
+Overlay color for likelihood of cancer on parameter images. Window
+size can be chosen.
+
+\item {\it ExtractName.vi}
+
+Extract the name and case number from the input file name. Also
+check to see how many digits are used to specify the case number.
+
+\item {\it FindLine.vi}
+
+Find the indices of a line in sector scan ref frame and convert to
+indices in the raw data ref frame. Can also use three input points
+to convert a box in the sector format to its equivalent in the raw
+data reference frame.
+
+\item {\it FindSectorBox.vi}
+
+Convert a box in sector format to one in the raw data system.
+Essentially converting $(x,y)$ to $(r,\theta)$. Where $(x,y)$ is a
+box in sector format and $(r,\theta)$ represents the raw data
+where $r$ is RF point (range) and $\theta$ is scan line (angle).
+
+\item {\it FitSpectrum.vi}
+
+Fit the selected frequency band using linear regression and return
+slope, intercept, mid-band fit, and error values.
+
+
+\item {\it MakeEllipse.vi}
+
+Find the coordinates of an ellipse based on the input arguments
+taken from three cursors in a graph window. One cursor defines the
+center of the ellipse and the other two the major and minor axis.
+
+\item {\it MovableROIFit.vi}
+
+Moves a ROI through a whole image and returns the fit parameters.
+The fit parameters for a CAL file are also returned if needed. The
+program can take both a single ROI or scan through a whole image.
+User selects ROI size and number of boxes in both the $X$ and $Y$
+directions or the ROI size and start coordinates.
+
+\item {\it PIByteFiles.vi}
+
+Create byte stream files from parameter image arrays. Geared
+towards B\&K data right now. Byte files are scaled to the input
+ranges for mid-band, intercept, and slope.
+
+
+\item {\it ProstSpecFormat.vi}
+
+Take data in {\it SpecCurveData.vi} and convert it to a text file
+where each variable is a fixed character width. Needed to prepare
+data for prostate data base.
+
+
+\item {\it ROIAverage.vi}
+
+Find average attenuation values for a region of interest in {\it
+SectorBiospy.vi}. For Hitachi data, also find average cross
+calibration for ROI.
+
+\item {\it ScaleParamData.vi}
+
+Scale data to a range of zero to some upper bound. Need to enter
+max and min range values for the scaling.
+
+\item{{\it ScatTheory.vi}}
+
+Algorithm to compute $CQ^{2}$ or spectral parameters from
+$CQ^{2}$.
+
+\item {\it SpecCurveData.vi}
+
+Assemble ROI and fit parameters into a string of characters which
+can be written to {\it Spectra.txt}
+
+\item {\it SubSpecOneCase.vi}
+
+If looking at a single case, subtract the CAL parameters from the
+raw fit region of the ROI spectrum. This VI is needed because the
+output of the FFT and fit comes in a format to handle a sliding
+window FFT. Need to extract the data for the single ROI case.
+
+\item {\it UnscaleParamData.vi}
+
+Scale 8 bit parameter images back to their true dB spectral
+parameter values.
+
+\item {\it ZeroPad.vi}
+
+Pad zeros onto the data before taking an FFT. User selects a power
+of 2 or the nearest power of 2.
+
+\end{enumerate}
+
+\section{ProstateDataAcq}
+Many of the programs described here are similar to what is
+discussed in Sec.~\ref{scan sec}. The main differences are that
+the VIs in this section do not use any motion control hardware and
+data acquisition is done with a GaGe board rather than with an
+Acqiris board.
+
+\subsection{Main programs}
+\subsubsection{{\it CopyToZip.vi}}
+A simple program that copies files from the Current Scans folder
+to Previous Scans folder and also copies the files to a zip disk.
+The program can also send an email message back to RRI if the
+computer used to take the data is networked.
+
+\subsubsection{{\it ProstateGetData.vi}}
+
+Similar to {\it AcqControl.vi} in Sec.~\ref{acqcon}. This is the
+master control for prostate data acquisition. Parameters are
+entered that get saved in the EYE file. Data is acquired and saved
+in RAM until a save to disk option is selected. Thumbnail images
+of all the scans can be viewed as data acquisition is in progress.
+In a research version of the software, more detailed options are
+available that permit RTV calibration and data acquisition from a
+single scan line across multiple frames.
+
+
+\subsection{Subprograms}
+\subsubsection{{\it Gage.llb}}
+This library contains the VIs used to control the GaGe board. VIs
+are also used from the library of programs installed with GaGe
+software.
+
+\begin{enumerate}
+
+\item {\it GageSampInterval.vi}
+
+Convert sampling rate to GaGe input parameter.
+
+\item {\it GageTrigLevel.vi}
+
+Convert trig level to GaGe input parameter.
+
+\item {\it GageVolScale.vi}
+
+Convert voltage scale to GaGe input parameter.
+
+\item {\it SetGagePrams.vi}
+
+Set up all GaGe input parameters.
+
+\item {\it SetUpGage.vi}
+
+Oscilloscope like program that acquires data from the GaGe board
+and displays it. This VI is used in the research version of the
+software to find the scan line with the maximum voltage. {\it
+ProstateGetData.vi} does not use this VI in the clinical version
+of the software.
+
+\end{enumerate}
+
+\subsubsection{ProstateScanSystem.llb}
+\begin{enumerate}
+
+\item {\it CountConfig.vi}
+
+Set up counter on the NI 6601 counter/timer card to take a frame
+of data or to acquire calibration data. Works with both a Hitachi
+system or a B\&K system (3535 or Hawk).
+
+\item {\it DigGageData.vi}
+
+This is where the GaGe data is acquired and transferred to memory.
+Parameters for each scan are also recorded along with the data.
+TGC data can be saved if using a B\&K.
+
+
+\item {\it FrameTrigger6601.vi}
+
+For frame acquisition, the counter is set up to generate an output
+pulse on the falling edge of a vector. The counter is armed by the
+frame signal. For the Hitachi it comes from the machine; for the
+B\&K it comes from another counter. The source input of the
+counter is actually routed internally by the 6601 card to the gate
+input. Hardware arming of the trigger occurs on PFI line 30. Note
+that hardware arming is available on the dedicated counter/timer
+cards from NI, but not on multi-purpose A/D cards.
+
+\item {\it FTPData.vi}
+
+This program allows data to be FTPed back to RRI. Also sends an
+email message that data is being sent. Not very elaborate error
+checking and has not been tested remotely yet.
+
+\item {\it NumberMultFile.vi}
+
+Add a scan number to root file name.
+
+\item {\it ProstateParams.vi}
+
+Set up a cluster of parameters for each scan. These are used to
+generate the header.
+
+\item {\it ProstateThumbnails.vi}
+
+Create small thumbnails of each scan for quick viewing.
+
+\item {\it QuitMode.vi}
+
+Option window to verify user really wants to exit software. If FTP
+is available, it also gives an FTP option.
+
+\item {\it RemNoiseRec.vi}
+
+Used for B\&K Hawk only. Subtracts out ``noise'' from the scan
+lines. First two lines of each from are coherent noise. First line
+for odd lines, second line for even lines.
+
+\item {\it SaveGageData.vi}
+
+Save all acquired data to eye files.
+
+\item {\it ScanParams.vi}
+
+All machine specific parameters are selected and kept track of in
+this vi.
+
+\item {\it VectorTrigger6601.vi}
+
+The vector trigger is more straightforward than frame acquisition.
+Vectors go to the source of the counter, the frame signal to the
+gate. An output is generated by counting the number of vectors
+after the falling edge of each frame sync. This allows an output
+trigger to occur at the same vector sync for every frame. This
+program will work with normal NI timer also, although it may need
+to be modified slightly.
+
+\end{enumerate}
+
+
+
+
+\section{Scanning Control}
+\label{scan sec}
+\subsection{Main programs}
+
+\subsubsection{{\it mastercontrol.vi}}
+
+This VI acts as the control panel for the different functions of
+data acquisition. Several options are presented: the motors can be
+manually controlled, the motors can be moved to an ($X,Y,Z$)
+position, the motors can be sent back to the ($0,0,0$) position,
+or a scan mode can be selected. The options for motor control open
+another control window to perform the desired function. To perform
+a scan, the scan mode is chosen, and then the button marked {\bf
+GO} needs to be pushed.
+
+
+\subsection{Subprograms}
+
+Some of the subprograms can nearly act as stand alone programs.
+However, because some global arguments are used and parameters get
+passed between subprograms, they will not normally function on
+their own.
+
+
+\subsubsection{{\it DP110.llb}}
+
+This contains the controls for the Acqiris DP 110. The low level
+programs are in the LabVIEW directory in the {\it Instr.lib}
+folder.
+
+\begin{enumerate}
+
+\item {\it conMem.vi}
+
+Set up segments and points per segment of digitizer.
+
+\item {\it conSamp.vi}
+
+Set up sampling rate and delay of digitizer.
+
+\item {\it conTrig.vi}
+
+Set up trigger of digitizer.
+
+\item {\it conVert.vi}
+
+Set up coupling and voltage scale of digitizer.
+
+\item {\it RFWindow.vi}
+
+Determine where to place plot cursor to indicate what data will be
+captured.
+
+\item {\it SampInterval.vi}
+
+Convert numerical sampling rate control into an actual value which
+can be input into the DP100.
+
+\item {\it SetUpDigi.vi}
+
+Set up the Acqiris digitizer  to take data. Used like an
+oscilloscope. Can select voltage scale, delay, and time base. If
+using a therapy burst, can also select those parameters. A red
+line on the digitizer traced shows what data will be captured
+during the scan.
+
+\item {\it SingleSeq.vi}
+
+Take a single sequence of data and return as a true voltage.
+
+\end{enumerate}
+
+\subsubsection{Panametrics}
+
+The control of the 5900PR is largely taken from VIs provided by
+Panametrics.
+
+
+\begin{enumerate}
+
+\item {\it 5800PRSet.llb}
+
+Can act as stand alone program. Checks status of 5900PR and then
+changes settings if needed.
+
+\item {\it 5800PR.llb}
+
+{\it 5800PRStatus.llb} check current settings, {\it 5900RW.llb}
+can read or write to 5900, and {\it GPIB Error Report.llb} reports
+an error if one came up.
+
+\end{enumerate}
+
+
+\subsubsection{{\it MM200.llb}}
+
+This library contains programs to perform basic movement of the
+motion system via the MM2000 motion control card. There is no need
+to discuss them because they are named to reflect their function.
+
+
+\subsubsection{{\it Ctrlpanl.llb}}
+
+This library also contains programs to perform basic movement of
+the motion system, and many of the features are duplicates of the
+{\it MM200.llb} library. However, the subVI named {\it
+MM2KCTRL.VI} is worth noting. It allows manual movement or
+incremental movement of the motors. This VI forms the core of the
+motion control accessed through {\it mastercontrol.vi}.
+
+\subsubsection{{\it ScanSystem.llb}}
+\label{acqcon}
+
+This library contains the meat and bones of the scan system. As
+mentioned earlier, the programs are able to operate as stand alone
+units to only some extent because global variables are used.
+
+\begin{enumerate}
+
+\item {\it 33120PRF.vi}
+
+Set the frequency on a HP33120A function generator. Used to set up
+the prf signal on the SYNC output
+
+\item {\it 33123oSyncStat.vi}
+
+Allows the SYNC output of a HP33120A function generator to be
+turned off and on.
+
+\item {\it AcqControl.vi}
+
+This vi provides the options for performing a scan. The look of
+the front panel changes depending on if it is a 1-D or 2-D scan.
+The appropriate parameters are available for the user to input.
+When the parameters are ready for use, a scan is commenced by
+pushing {\bf Start Scan}. Pushing {\bf Exit} ends the execution of
+the program.
+
+Global variables are extensively used. This helps reduce the
+clutter of wiring and passing arguments between subprograms. The
+program starts by setting up the PRF source which is an external
+function generator. The user can select an option to set up the
+Panametrics P/R ({\bf Set Panametrics}). The digitizer ({\bf Set
+Digitizer}) needs to be set up before taking data. More detailed
+instructions on the use of the software available.
+
+\item {\it CaseParams.vi}
+
+Assembles a cluster of arguments for each scan performed. Used so
+to keep track of parameters when saving data.
+
+\item {\it ContMotion.vi}
+
+This vi assembles a program to perform a continuous motion scan
+with triggers at specified intervals. Used by {\it
+SendProgram.vi}.
+
+\item {\it DigData.vi}
+
+This VI controls the actual scan and data acquisition. First, the
+counters are stopped if using an internal PRF or if the therapy
+transducer is being used. Then the Acqiris is set up to take a
+batch of sequence data. Counters are then started or the motors
+are moved to provide the PRF triggers for the Acqiris. Motion can
+either be a continuous sweep or in incremental steps, depending on
+the type of scan. After the data is acquired, the counters are
+again stopped, the therapy voltage, if used, is set to zero and
+the motors are returned to their start position.  The data is then
+assembled into a 2-D matrix with each column a single scan line.
+
+
+\item {\it EXTPRFCount.vi}
+
+This VI sets up the counters to divide down the PRF and to send
+out a delayed pulse to the therapy transducer. Counter 0 provides
+the divide down and counter 1 provides the delay.
+
+\item {\it IncSteps.vi}
+
+This vi assembles a program to perform an incremental motion
+triggers at a specified increment. Used by {\it SendProgram.vi}.
+
+\item {\it InputHeader.vi}
+
+Panel that opens prior to saving EYE files. Contains the fields in
+the header and permits changes to be made to some of them.
+
+\item {\it IntPRFCount.vi}
+
+Sets up counters on the A/D board to generate a PRF. Counter 0 is
+the PRF and counter 1 divides down the signal. The divided signal
+can trigger the therapy. This VI is no longer used. Instead {\it
+EXTPRFCount.vi} is used because the PRF is always from an external
+source. If setting up a system with no motion control, this VI
+could be useful.
+
+
+\item {\it MM2KManCTRL.VI.vi}
+
+Allows manual control of the motors. By depressing the controls,
+motor can be moved in any direction. The position is updated as
+the motor moves.
+
+\item {\it MotionGlobals.vi}
+
+This VI contains all the global variables. It is used by many of
+the programs in this section.
+
+\item {\it MoveToXYZ.vi}
+
+Moves motors to the specified ($X,Y,Z$) position.
+
+\item {\it NumberFileName.vi}
+
+Used for labeling 2-D scans. Allows a number to be added to the
+case name.
+
+
+\item {\it SaveData.vi}
+
+Save the data from a scan in eye files. Uses arguments assembled
+in {\it CaseParams.vi} to set up values in the header. User can
+alter any header parameter and then save the data. If a 2-D scan
+was used, data files are automatically numbered.
+
+\item {\it SendProgram.vi}
+
+Sends a motion program to the MM2000. The program is assembled
+based on input parameters sent to the motion board and is then
+compiled by the MM2000 card. Two types of programs can be sent,
+one for a continuous motion with trigger pulses at specified
+intervals, or one for incremental motion with a trigger pulse at
+each incremental move.
+
+\item {\it SetPid\&FindPos.vi}
+
+Set the parameters for the motors such as velocity. Also find the
+current position and write it to the global variables.
+
+\item {\it ShowThumbs.vi}
+
+Displays a 1-D array of Picts as a 2-D array. User specifies
+number of columns.
+
+\item {\it Therapy\&Scan.vi}
+
+Allows therapy to be fired for longer durations than just 2000
+cycles of HP burst mode. Calls {\it Therapy.vi} between taking
+A-Scans. User specifies A-scans before and after therapy.
+
+\item {\it Therapy.vi}
+
+Allows therapy transducer to be fired for some specified number of
+seconds. Makes a call to {\it TherapyBurst.vi} to set up the
+function generator in a gated mode. Counters 0 and 1 are used to
+gate the therapy function generator for the desired length of
+time.
+
+
+\item {\it TherapyBurst.vi}
+Sends GPIB commands to adjust the settings of the function
+generator used to control the therapy transducer.
+
+\item {\it Thunmbnails.vi}
+
+Make thumbnail images of all the scans. The thumbnails can be
+viewed as an array by selecting the appropriate option where
+available.
+
+\end{enumerate}
+
+
+\section{TransducerCal}
+
+
+\subsection{Main programs}
+
+\subsubsection{{\it BeamCal.vi}}
+
+Takes EYE files from pulse measurements with a hydrophone and
+computes beamwidth and other parameters. Some of the parameters
+need to be manually entered.
+
+\subsubsection{{\it FindBandwidth.vi}}
+
+Open a cal fine (two column format) and determine bandwidth and
+center frequency.
+
+\subsubsection{{\it PulseCal.vi}}
+
+Allows calibration of pulses from a transducer using the FDA
+definitions of various parameters. Need to enter a few parameters
+from when the data was taken. Then can take an EYE file and select
+a scan line that contains the pulse information. By selecting the
+region of the line that has the pulse, all the relevant parameters
+are generated.
+
+\subsubsection{{\it TestTrans.vi}}
+
+Will perform a 1-D or 2-D scan and allow for characterizing the
+beam pattern of a transducer. Uses many of the same VIs that were
+found in Sec.~\ref{scan sec}. Data will be presented in both a 3-D
+form and also 2-D. Still need to work out details.
+
+\subsection{Subprograms}
+
+\subsubsection{{\it CalTransducer.llb}}
+
+
+\begin{enumerate}
+\item {\it ChoosePram.vi}
+
+Finds selected parameter for scan data. Can find pos, neg,
+peak-peak, and rms voltages or single pulse parameters.
+
+\item {\it Derate\&MI.vi}
+
+Find derated parameter values for ultrasound pulse. Takes inputs
+from {\it IntParams.vi}.
+
+\item {\it FindHydSens.vi}
+
+Find a sensitivity of a hydrophone for a specified frequency. Can
+choose a calibration from one of our hydrophones.
+
+
+\item {\it IntParams.vi}
+
+Finds the intensity parameters such as $I_{ta}$ and $I_{pa}$ for
+an ultrasound pulse.
+
+\item {\it MoveandWait.vi}
+
+Move motor and wait for specified time duration.
+
+\item {\it MultiPlane.vi}
+
+Used when taking 3-D data of a transducer. Allows for multiple
+scan plane data sets by incrementing up (vertical) in the
+z-direction after each scan and saving the data to a spreadsheet
+file.
+
+\item {\it PulsePrams.vi}
+
+Finds pulse from an RF signal and computes the pulse parameters
+using {\it FindHydSens.vi}, {\it IntParams.vi}, and {\it
+Derate\&MI.vi}.
+
+\item {\it RapidScan.vi}
+
+Takes data in a continuous sweep rather then in incremental steps.
+Speeds up the data collection.
+
+\item  {\it ScanTrans.vi}
+
+Performs scans for {\it TestTrans.vi}. Moves motors along desired
+axis in an incremental fashion, stopping briefly at each point to
+take data. Idea is to use a hydrophone to sample a CW wave from a
+source and then to extract parameters from the wave to
+characterize the source. May want to allow a burst from source.
+Can use a pre-trigger or delay on Acqiris to take the data
+properly. Will need ability to display trace from Acqiris.
+
+\end{enumerate}
+
+\section{3DdataPrep}
+\subsection{Main programs}
+\subsubsection{{\it 3DVisPrep.vi}}
+
+This program allows data stored in scan planes (either spreadsheet
+format or RGB BMP) to be converted to several types of output
+files. The output options include conversion to 8 bit byte files
+for each plane or a single byte file with all the data. The
+spreadsheet data can also be converted to 8 bit BMP files.
+
+\section{Annular Array}
+\subsection{Main programs}
+
+An assortment of programs to compute the SIR from an annular
+array.
+
+\end{document}

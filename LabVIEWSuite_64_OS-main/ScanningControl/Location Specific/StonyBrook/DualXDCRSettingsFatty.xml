@@ -1,0 +1,548 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>17.0</Version>
+<Cluster>
+<Name>Dual XDCR Settings</Name>
+<NumElts>4</NumElts>
+<Array>
+<Name>Scan Size</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>12.50000000000000</Val>
+</DBL>
+</Array>
+<Array>
+<Name>XDCR Offset</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>-35.70000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>14.50000000000000</Val>
+</DBL>
+</Array>
+<Boolean>
+<Name>Found Home</Name>
+<Val>0</Val>
+</Boolean>
+<Array>
+<Name>XDCR Settings</Name>
+<Dimsize>2</Dimsize>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>11</NumElts>
+<String>
+<Name>Transducer Name</Name>
+<Val>T1</Val>
+</String>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>50.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>50.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>250.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>12.00000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>4167</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>0.20000000000000</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>10</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>12.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>14.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>3.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>30</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>60</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>40</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Panametrics Settings</Name>
+<NumElts>9</NumElts>
+<U16>
+<Name>ENERGY (uJ)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>DAMPING (Ohm)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>HP FILT (KHz) </Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>LP FILT (MHz)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>MODE</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>PRF (KHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>GAIN (db)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>COARSE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>FINE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>JSR Complete</Name>
+<NumElts>3</NumElts>
+<Cluster>
+<Name>JSR Pulse Settings</Name>
+<NumElts>4</NumElts>
+<I16>
+<Name>Damping</Name>
+<Val>59</Val>
+</I16>
+<U16>
+<Name>Pulse Energy Level</Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>Pulser Impedance</Name>
+<Val>0</Val>
+</U16>
+<I16>
+<Name>Pulser Voltage (V)</Name>
+<Val>100</Val>
+</I16>
+</Cluster>
+<Cluster>
+<Name>JSR Receive Settings</Name>
+<NumElts>4</NumElts>
+<I8>
+<Name>Receiver Mode</Name>
+<Val>0</Val>
+</I8>
+<U16>
+<Name>High Pass Filter</Name>
+<Val>5000</Val>
+</U16>
+<U16>
+<Name>Low Pass Filter</Name>
+<Val>50</Val>
+</U16>
+<I8>
+<Name>Gain (dB)</Name>
+<Val>50</Val>
+</I8>
+</Cluster>
+<Cluster>
+<Name>JSR Trigger Settings</Name>
+<NumElts>3</NumElts>
+<I8>
+<Name>External Trigger Limit</Name>
+<Val>0</Val>
+</I8>
+<I8>
+<Name>Trigger Source</Name>
+<Val>1</Val>
+</I8>
+<DBL>
+<Name>PRF (Hz)</Name>
+<Val>1.75000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>UT340 Controls</Name>
+<NumElts>12</NumElts>
+<Boolean>
+<Name>High Pass On</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>High Pass Filter (MHz)</Name>
+<Val>2</Val>
+</I16>
+<Boolean>
+<Name>Low Pass On</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>Low Pass Filter (MHz)</Name>
+<Val>50</Val>
+</I16>
+<I16>
+<Name>PE Gain (dB)</Name>
+<Val>29</Val>
+</I16>
+<I16>
+<Name>Voltage</Name>
+<Val>200</Val>
+</I16>
+<DBL>
+<Name>Pulse Width (ns)</Name>
+<Val>19.50000000000000</Val>
+</DBL>
+<Boolean>
+<Name>Mode</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>PC Gain (dB)</Name>
+<Val>0</Val>
+</I16>
+<Boolean>
+<Name>Trig Source</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>Rep Rate (Hz)</Name>
+<Val>700</Val>
+</I16>
+<Boolean>
+<Name>PULSE</Name>
+<Val>1</Val>
+</Boolean>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>11</NumElts>
+<String>
+<Name>Transducer Name</Name>
+<Val>T2</Val>
+</String>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>100.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>250.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>250.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>46.53333333333334</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>4167</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>0.20000000000000</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>2</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>15</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>41.10000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>39.85000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>10</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>100</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>28</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Panametrics Settings</Name>
+<NumElts>9</NumElts>
+<U16>
+<Name>ENERGY (uJ)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>DAMPING (Ohm)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>HP FILT (KHz) </Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>LP FILT (MHz)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>MODE</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>PRF (KHz)</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>GAIN (db)</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>COARSE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+<U16>
+<Name>FINE ATTENUATION</Name>
+<Val>0</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>JSR Complete</Name>
+<NumElts>3</NumElts>
+<Cluster>
+<Name>JSR Pulse Settings</Name>
+<NumElts>4</NumElts>
+<I16>
+<Name>Damping</Name>
+<Val>59</Val>
+</I16>
+<U16>
+<Name>Pulse Energy Level</Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>Pulser Impedance</Name>
+<Val>0</Val>
+</U16>
+<I16>
+<Name>Pulser Voltage (V)</Name>
+<Val>100</Val>
+</I16>
+</Cluster>
+<Cluster>
+<Name>JSR Receive Settings</Name>
+<NumElts>4</NumElts>
+<I8>
+<Name>Receiver Mode</Name>
+<Val>0</Val>
+</I8>
+<U16>
+<Name>High Pass Filter</Name>
+<Val>5000</Val>
+</U16>
+<U16>
+<Name>Low Pass Filter</Name>
+<Val>50</Val>
+</U16>
+<I8>
+<Name>Gain (dB)</Name>
+<Val>50</Val>
+</I8>
+</Cluster>
+<Cluster>
+<Name>JSR Trigger Settings</Name>
+<NumElts>3</NumElts>
+<I8>
+<Name>External Trigger Limit</Name>
+<Val>0</Val>
+</I8>
+<I8>
+<Name>Trigger Source</Name>
+<Val>1</Val>
+</I8>
+<DBL>
+<Name>PRF (Hz)</Name>
+<Val>1.75000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>UT340 Controls</Name>
+<NumElts>12</NumElts>
+<Boolean>
+<Name>High Pass On</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>High Pass Filter (MHz)</Name>
+<Val>2</Val>
+</I16>
+<Boolean>
+<Name>Low Pass On</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>Low Pass Filter (MHz)</Name>
+<Val>30</Val>
+</I16>
+<I16>
+<Name>PE Gain (dB)</Name>
+<Val>28</Val>
+</I16>
+<I16>
+<Name>Voltage</Name>
+<Val>200</Val>
+</I16>
+<DBL>
+<Name>Pulse Width (ns)</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<Boolean>
+<Name>Mode</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>PC Gain (dB)</Name>
+<Val>1</Val>
+</I16>
+<Boolean>
+<Name>Trig Source</Name>
+<Val>1</Val>
+</Boolean>
+<I16>
+<Name>Rep Rate (Hz)</Name>
+<Val>700</Val>
+</I16>
+<Boolean>
+<Name>PULSE</Name>
+<Val>1</Val>
+</Boolean>
+</Cluster>
+</Cluster>
+</Array>
+</Cluster>
+</LVData>

@@ -1,0 +1,413 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>16.0</Version>
+<Array>
+<Name>Scanned Nodes</Name>
+<Dimsize>9</Dimsize>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>172500</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>1</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>1</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>2</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>1</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>2</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>2</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>2</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>1</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>1</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>3</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>0</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val></Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>1</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>5</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val>FaceBalls</Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+<Cluster>
+<Name>Node Info</Name>
+<NumElts>7</NumElts>
+<U32>
+<Name>Patient Number</Name>
+<Val>1725000</Val>
+</U32>
+<String>
+<Name>Node Set</Name>
+<Val>A</Val>
+</String>
+<U32>
+<Name>Node Number</Name>
+<Val>2</Val>
+</U32>
+<EW>
+<Name>Tissue Type</Name>
+<Choice>Breast</Choice>
+<Choice>Gastric</Choice>
+<Choice>Rectal</Choice>
+<Choice>Colon</Choice>
+<Choice>Head &amp; Neck</Choice>
+<Choice>Other</Choice>
+<Val>5</Val>
+</EW>
+<String>
+<Name>Tissue Location (Other)</Name>
+<Val>FaceBalls</Val>
+</String>
+<EW>
+<Name>Node Classification</Name>
+<Choice>Whole Node</Choice>
+<Choice>Piece A</Choice>
+<Choice>Piece B</Choice>
+<Choice>Piece C</Choice>
+<Val>0</Val>
+</EW>
+<EL>
+<Name>Fresh?</Name>
+<Choice>Fresh?</Choice>
+<Choice>Fixed?</Choice>
+<Choice>Refrigerated?</Choice>
+<Val>0</Val>
+</EL>
+</Cluster>
+</Array>
+</LVData>

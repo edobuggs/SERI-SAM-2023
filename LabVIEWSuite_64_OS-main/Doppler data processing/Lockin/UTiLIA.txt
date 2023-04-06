@@ -1,0 +1,83 @@
+UTiLIA: Lockin analyzer for superconductivity experiment
+
+UTiLIA is released under the GPL. (c) Philip Kromer, 1999
+
+UTiLIA-Channels.daq:	In NIMax (Measurement and Automation Explorer) choose 
+				Tools / NI-DAQ Configuration / Set Active Configuration;
+				Choose this file to load its channels.
+				You will need to fix the device info for for each channel
+				to the correct DAQ device.
+
+
+UTiLIA-Main:		Where most of it goes down.  
+				It sets up:
+				 - Compute the reference frequency, sampling freq, 
+				   # of chunks, bits / chunk, etc.  There are actually 
+				   a _lot_ of constraints on these values; that's why 
+				   they're chosen the way they are.
+				 - Initializes the acquisition:
+				   Configures the board to generate reference;
+				   Configures the board to read analog inputs;
+				   Set up software triggered acquisition.
+				     (Soft triggering is the wrong thing to do -- 
+				      much better to do hardware triggering on the analog 
+				      out clock, or better yet to do continuous aq)
+				
+				Next it enters a while loop. Each iteration: 
+				 - Read the data
+				 - Plot the raw waveforms and the reference
+				 - Plot the FFT of the signals
+
+				 - Lock in to extract the signal
+				 - Find a short and long term average
+				 - Plot the locked / filtered / averaged signals
+				 - Plot the error vs. time
+				
+				 - Record values to disk
+					Order of columns in saved data file:
+					Iteration
+					Current
+					In-Phase Voltage
+					Quadrature Voltage
+					Temperature
+				
+				 - Some magic to clear the graphs while the average 
+				   is "dirty" (has not rolled for long enough to be useful)
+
+				If the stop button is pressed or an error occurs, 
+				the program cleans up and exits.
+
+In UTiLIA-Helpers.llb:
+  SetupAq.vi		Initializes the acquisition:
+				   Configures the board to generate reference;
+				   Configures the board to read analog inputs;
+				   Set up software triggered acquisition.
+				     (Soft triggering is the wrong thing to do -- 
+				      much better to do hardware triggering on the analog 
+				      out clock, or better yet to do continuous aq)
+
+  Aq.vi			Performs the actual acquisiton 
+
+  Lock.vi			Does actual lockin and filtering.
+
+  RollingAverage.vi	Makes a short-term (chunk) average 
+				and a long-term (80 chunk rolling exp) average
+
+  XYBuffer.vi		Holds a circular buffer so that individual X-Y values
+				gathered each trip thru the loop may be displayed 
+				on a waveform graph.
+_____________________________________________________________________
+
+ This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

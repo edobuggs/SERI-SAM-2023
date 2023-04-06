@@ -1,0 +1,252 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>15.0f2</Version>
+<Cluster>
+<Name>Dual XDCR Settings</Name>
+<NumElts>5</NumElts>
+<Array>
+<Name>Offset Axes</Name>
+<Dimsize>3</Dimsize>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>1</Val>
+</U16>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>2</Val>
+</U16>
+<U16>
+<Name>Axis or Vector Space</Name>
+<Val>3</Val>
+</U16>
+</Array>
+<Array>
+<Name>Scan Size</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>12.50000000000000</Val>
+</DBL>
+</Array>
+<Array>
+<Name>XDCR Offset</Name>
+<Dimsize>3</Dimsize>
+<DBL>
+<Name>mm</Name>
+<Val>-0.32500000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>-35.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>mm</Name>
+<Val>21.97500000000000</Val>
+</DBL>
+</Array>
+<Boolean>
+<Name>Found Home</Name>
+<Val>0</Val>
+</Boolean>
+<Array>
+<Name>XDCR Settings</Name>
+<Dimsize>2</Dimsize>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>7</NumElts>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>30</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>75</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>22</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>50.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>50.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>250.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>9.67000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>3400</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>0.40000000000000</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>10</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>50</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>12.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>16.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>4.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>7</NumElts>
+<Cluster>
+<Name>Daxsonics Settings</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Freq (MHz) </Name>
+<Val>10</Val>
+</U16>
+<U16>
+<Name>Voltage (V)</Name>
+<Val>95</Val>
+</U16>
+<U16>
+<Name>Gain (dB)</Name>
+<Val>31</Val>
+</U16>
+</Cluster>
+<Cluster>
+<Name>Motion Settings</Name>
+<NumElts>2</NumElts>
+<SGL>
+<Name>Distance between
+scan lines (um)</Name>
+<Val>100.00000</Val>
+</SGL>
+<SGL>
+<Name>Distance between
+scan planes (um)</Name>
+<Val>250.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Digitizer Settings</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>RF data Sampling</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>Sampling Rate</Name>
+<Val>250.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Ref Delay (ms)</Name>
+<Val>49.65000000000000</Val>
+</DBL>
+<I32>
+<Name>rf points per line</Name>
+<Val>3400</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>Time scale per Div</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Voltage Scale</Name>
+<Val>0.40000000000000</Val>
+</DBL>
+<DBL>
+<Name>Additional dig delay (ms)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Filter Prams</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>low cutoff</Name>
+<Val>2</Val>
+</I32>
+<I32>
+<Name>order</Name>
+<Val>81</Val>
+</I32>
+<I32>
+<Name>high cutoff</Name>
+<Val>15</Val>
+</I32>
+</Cluster>
+<DBL>
+<Name>XDCR Focal Length</Name>
+<Val>42.10000000000000</Val>
+</DBL>
+<DBL>
+<Name>Data Vertical Center</Name>
+<Val>42.10000000000000</Val>
+</DBL>
+<DBL>
+<Name>Image Vertical Offset</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+</Array>
+</Cluster>
+</LVData>

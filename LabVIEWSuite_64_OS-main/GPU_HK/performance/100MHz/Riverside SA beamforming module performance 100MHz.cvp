@@ -1,0 +1,151 @@
+<!DOCTYPE cvp>
+<cvp version="4.0" >
+ <session>
+  <name>1cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:23:35</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>1.5cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:24:04</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>2cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:24:35</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>2.5cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:25:10</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>3cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:25:29</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>3.5cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:25:56</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+ <session>
+  <name>4cm</name>
+  <progpath>"C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release/riversideSAtest.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/ProgramData/NVIDIA Corporation/NVIDIA GPU Computing SDK 4.0/C/src/riversideSAtest/Release</workdirpath>
+  <datetime>23 Nov 2011 10:26:41</datetime>
+  <normalizedcounter>false</normalizedcounter>
+  <device multProcessorCount="16" label="Device_0" id="0" computeCapability="2.0" maxGridDim="65535 65535" GpuOverlap="1" maxPitchMem="2147483647" name="GeForce GTX 590" clockFreq="1215000" L2CacheSize="786432" maxRegPerBlock="32768" chip="200" maxThreadPerSM="1536" maxShareMemPerBlock="49152" MemClockRate="1707000" maxBlockDim="1024 1024 64" asyncEngineCount="1" warpSize="32" maxThreadPerBlock="1024" MemBandwidth="1310976000" textureAlignment="512" >
+   <context totalcountercount="0" invalidcountercount="0" id="0" label="Context_0" truncatedcountercount="0" trace="0" >
+    <run number="2" >local_load,local_store,gld_request,gst_request</run>
+    <run number="3" >shared_load,shared_store,sm_cta_launched,l1_local_load_hit</run>
+    <run number="4" >branch,l1_local_load_miss,l1_local_store_hit</run>
+    <run number="5" >divergent_branch,l1_local_store_miss,l1_global_load_hit</run>
+    <run number="6" >inst_issued,l1_global_load_miss</run>
+    <run number="7" >inst_executed,uncached_global_load_transaction,global_store_transaction</run>
+    <run number="8" >warps_launched,threads_launched,l1_shared_bank_conflict</run>
+    <run number="9" >active_warps</run>
+    <run number="10" >active_cycles</run>
+   </context>
+  </device>
+ </session>
+</cvp>
+
